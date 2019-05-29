@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => (
   <div className="card">
-    <img className="card-img-top" src="https://i1.wp.com/thefrontline.org.uk/wp-content/uploads/2018/10/placeholder.jpg?ssl=1" alt="image" />
+    <img className="card-img-top" src="https://i1.wp.com/thefrontline.org.uk/wp-content/uploads/2018/10/placeholder.jpg?ssl=1" alt="placeholder" />
     <div className="card-body">
       <h5 className="card-title">{itemName}</h5>
       <p className="card-text">
