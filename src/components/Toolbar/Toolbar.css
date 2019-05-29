@@ -6,14 +6,14 @@
   background: #ffffff;
   box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12),
     0 7px 10px -5px rgba(0, 0, 0, 0.15);
-  height: 56px;
+  padding: 10px 0;
 }
 
 .toolbar__navigation {
   display: flex;
   height: 100%;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 3rem;
 }
 
 .toolbar__logo {
@@ -44,7 +44,7 @@
 }
 
 .toolbar_navigation-items li {
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 
 .toolbar_navigation-items a {
