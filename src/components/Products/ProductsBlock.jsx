@@ -1,8 +1,7 @@
 import React from 'react';
-import ProductsSettings from '../ProductsSettings/ProductsSettings';
+import ProductsSettings from './ProductsSettings';
 
 const ProductsBlock = () => (
-  // @todo categorize folders
   <ProductsSettings />
 );
 

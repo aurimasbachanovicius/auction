@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductsSortingInput from '../ProductsSorting/ProductsSortingInput';
-import ProductsListViewInput from '../ProductsListView/ProductsListViewInput';
+import ProductsSortingInput from './ProductsSortingInput';
+import ProductsListViewInput from './ProductsListViewInput';
 
 const ProductsSettings = () => (
   <form className="form-inline">

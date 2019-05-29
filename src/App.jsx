@@ -5,7 +5,7 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Search from './components/Search/Search';
 import PopularSearches from './components/PopularSearches/PopularSearches';
-import ProductsBlock from './components/ProductsBlock/ProductsBlock';
+import ProductsBlock from './components/Products/ProductsBlock';
 
 class App extends Component {
   state = {
