@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+import Search from './components/Search/Search';
 
 class App extends Component {
   state = {
@@ -31,8 +32,8 @@ class App extends Component {
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={sideDrawerOpen} />
         {backdrop}
-        <main style={{ marginTop: '64px' }}>
-          <p>Page content</p>
+        <main style={{ marginTop: '80px' }} className="container">
+          <Search categories={['category1', 'category2']} />
         </main>
       </div>
     );
