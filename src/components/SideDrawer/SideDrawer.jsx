@@ -1,12 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import "./SideDrawer.css";
+import PropTypes from 'prop-types';
+import './SideDrawer.css';
 
-const sideDrawer = props => {
-  let drawerClasses = "side-drawer";
-  if (props.show) {
-    drawerClasses = "side-drawer open";
+const sideDrawer = ({ show }) => {
+  let drawerClasses = 'side-drawer';
+  if (show) {
+    drawerClasses = 'side-drawer open';
   }
+
   return (
     <nav className={drawerClasses}>
       <ul>
@@ -22,6 +24,10 @@ const sideDrawer = props => {
       </ul>
     </nav>
   );
+};
+
+sideDrawer.propTypes = {
+  show: PropTypes.bool.isRequired,
 };
 
 export default sideDrawer;
