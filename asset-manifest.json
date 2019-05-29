@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/auction/static/css/main.a293f59e.chunk.css",
-    "main.js": "/auction/static/js/main.27f92102.chunk.js",
-    "main.js.map": "/auction/static/js/main.27f92102.chunk.js.map",
+    "main.js": "/auction/static/js/main.37815a10.chunk.js",
+    "main.js.map": "/auction/static/js/main.37815a10.chunk.js.map",
     "runtime~main.js": "/auction/static/js/runtime~main.0154db06.js",
     "runtime~main.js.map": "/auction/static/js/runtime~main.0154db06.js.map",
     "static/css/2.22a7d4ef.chunk.css": "/auction/static/css/2.22a7d4ef.chunk.css",
     "static/js/2.0ef9ac0a.chunk.js": "/auction/static/js/2.0ef9ac0a.chunk.js",
     "static/js/2.0ef9ac0a.chunk.js.map": "/auction/static/js/2.0ef9ac0a.chunk.js.map",
     "index.html": "/auction/index.html",
-    "precache-manifest.76d23b0a9b49d29698a67bf4cec386dc.js": "/auction/precache-manifest.76d23b0a9b49d29698a67bf4cec386dc.js",
+    "precache-manifest.8bf0da8442e70b5e8c621ae43e9d93a5.js": "/auction/precache-manifest.8bf0da8442e70b5e8c621ae43e9d93a5.js",
     "service-worker.js": "/auction/service-worker.js",
     "static/css/2.22a7d4ef.chunk.css.map": "/auction/static/css/2.22a7d4ef.chunk.css.map",
     "static/css/main.a293f59e.chunk.css.map": "/auction/static/css/main.a293f59e.chunk.css.map"
