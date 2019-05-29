@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProductsSortingInput = ({ availableModes }) => (
+const SortingModeSelect = ({ availableModes }) => (
   <div className="form-group">
     <select className="form-control">
       {availableModes.map(mode => (
@@ -11,8 +11,8 @@ const ProductsSortingInput = ({ availableModes }) => (
   </div>
 );
 
-ProductsSortingInput.propTypes = {
+SortingModeSelect.propTypes = {
   availableModes: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default ProductsSortingInput;
+export default SortingModeSelect;

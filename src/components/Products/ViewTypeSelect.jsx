@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProductsListViewInput = ({ availableTypes }) => (
+const ViewTypeSelect = ({ availableTypes }) => (
   <div className="form-group mx-sm-3">
     <select className="form-control">
       {availableTypes.map(type => (
@@ -11,8 +11,8 @@ const ProductsListViewInput = ({ availableTypes }) => (
   </div>
 );
 
-ProductsListViewInput.propTypes = {
+ViewTypeSelect.propTypes = {
   availableTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default ProductsListViewInput;
+export default ViewTypeSelect;
