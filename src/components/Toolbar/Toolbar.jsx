@@ -2,6 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
+import Search from '../Search/Search';
 import './Toolbar.css';
 
 const toolbar = ({ drawerClickHandler }) => (
@@ -13,14 +14,12 @@ const toolbar = ({ drawerClickHandler }) => (
       <div className="toolbar__logo">
         <a href="/">LOGO</a>
       </div>
-      <div className="spacer" />
+      {/* <div className="spacer" /> */}
+      <Search categories={['cat1', 'cat2']} />
       <div className="toolbar_navigation-items">
         <ul>
           <li>
-            <a href="/">Login</a>
-          </li>
-          <li>
-            <a href="/">Register</a>
+            <a href="/">Login | Register</a>
           </li>
           <li>
             <a href="/">Current Bids</a>
@@ -32,7 +31,7 @@ const toolbar = ({ drawerClickHandler }) => (
 );
 
 toolbar.propTypes = {
-  drawerClickHandler: PropTypes.func.isRequired,
+  drawerClickHandler: PropTypes.func.isRequired
 };
 
 export default toolbar;
