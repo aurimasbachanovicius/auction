@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './ProductCard.css';
 
 const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => (
   <div className="card">
@@ -7,12 +8,12 @@ const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => (
     <div className="card-body">
       <h5 className="card-title">{itemName}</h5>
       <p className="card-text">
-        <span style={{ width: `${100}%`, display: 'block' }}>{`Current: ${currentBid} Eur`}</span>
-        <span style={{ width: `${100}%`, display: 'block' }}>{`End after: ${timeUntilBidEnd} Hour`}</span>
+        <span style={styles.infoBlock}>{`Current: ${currentBid} Eur`}</span>
+        <span style={styles.infoBlock}>{`End after: ${timeUntilBidEnd} Hour`}</span>
       </p>
 
       <form className="form-inline">
-        <div className="input-group" style={{ width: `${100}%` }}>
+        <div className="input-group" style={styles.fullWidth}>
           <input type="text" className="form-control rounded-0" />
           <a href="?=a" className="btn btn-primary rounded-0">Bid</a>
         </div>
