@@ -4,6 +4,7 @@
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.0.0-rc.0",
+    "@material-ui/icons": "^4.0.1",
     "gh-pages": "^2.0.1",
     "prop-types": "latest",
     "react": "^16.8.6",

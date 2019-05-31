@@ -15,7 +15,7 @@ const toolbar = ({ drawerClickHandler }) => (
         <a href="/">LOGO</a>
       </div>
       {/* <div className="spacer" /> */}
-      <Search categories={['cat1', 'cat2']} />
+      <Search />
       <div className="toolbar_navigation-items">
         <ul>
           <li>
