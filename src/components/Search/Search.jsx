@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     flex: 1
   },
   iconButton: {
-    padding: 10
+    padding: 6
   },
   divider: {
     width: 1,
@@ -77,6 +77,12 @@ function Search() {
         className={classes.textField}
         value={values.category}
         onChange={handleChange('category')}
+        // onOpen={{
+        //   style: {
+        //     backgroundColor: '#FFFFFF'
+        //   }
+        // }}
+        // inputStyle={{ backgroundColor: 'red' }}
         SelectProps={{
           MenuProps: {
             className: classes.menu
