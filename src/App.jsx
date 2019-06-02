@@ -35,11 +35,7 @@ class App extends Component {
         {backdrop}
         <main style={{ marginTop: '80px' }} className="container">
           <PopularSearches
-            searches={[
-              'popular search 1',
-              'popular search 2',
-              'popular search 3'
-            ]}
+            searches={['popular search 1', 'popular search 2', 'popular search 3']}
           />
           <div className="row mt-4">
             <div className="col-md-9">

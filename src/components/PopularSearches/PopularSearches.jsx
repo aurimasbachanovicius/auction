@@ -15,7 +15,7 @@ const PopularSearches = ({ searches }) => (
 );
 
 PopularSearches.propTypes = {
-  searches: PropTypes.arrayOf(PropTypes.string).isRequired,
+  searches: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default PopularSearches;

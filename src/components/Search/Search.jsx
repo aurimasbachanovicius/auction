@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Search.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -77,12 +76,6 @@ function Search() {
         className={classes.textField}
         value={values.category}
         onChange={handleChange('category')}
-        // onOpen={{
-        //   style: {
-        //     backgroundColor: '#FFFFFF'
-        //   }
-        // }}
-        // inputStyle={{ backgroundColor: 'red' }}
         SelectProps={{
           MenuProps: {
             className: classes.menu
