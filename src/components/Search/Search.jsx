@@ -1,5 +1,4 @@
 import React from 'react';
-import './Search.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -86,17 +85,17 @@ function Search() {
         }}
       >
         {categories.map(option => (
-          <MenuItem key={option.value} value={option.value}>
+          <MenuItem key={option.value} value={option.value} button="">
             {option.label}
           </MenuItem>
         ))}
       </TextField>
       <InputBase className={classes.input} placeholder="Search item..." />
-      <IconButton className={classes.iconButton} aria-label="Search">
+      <IconButton className={classes.iconButton} aria-label="Search" href="">
         <SearchIcon />
       </IconButton>
       <Divider className={classes.divider} />
-      <IconButton className={classes.iconButton} aria-label="Directions">
+      <IconButton className={classes.iconButton} aria-label="Directions" href="">
         <SettingsIcon />
       </IconButton>
     </Paper>
