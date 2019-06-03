@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import PopularSearches from './components/PopularSearches/PopularSearches';
-import ProductsBlock from './components/Products/ProductsBlock';
 
 class App extends Component {
   state = {
@@ -33,17 +34,19 @@ class App extends Component {
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={sideDrawerOpen} />
         {backdrop}
-        <main style={{ marginTop: '80px' }} className="container">
-          <PopularSearches
-            searches={['popular search 1', 'popular search 2', 'popular search 3']}
-          />
-          <div className="row mt-4">
-            <div className="col-md-9">
-              <ProductsBlock />
-            </div>
-            <div className="col-md-3">Latest Bids | User&apos;s bids</div>
-          </div>
-        </main>
+        <Box mt={10}>
+          <Container maxWidth="lg">
+            <PopularSearches
+              searches={['popular search 1', 'popular search 2', 'popular search 3']}
+            />
+            {/* <div className="row mt-4"> */}
+            {/*  <div className="col-md-9"> */}
+            {/*    <ProductsBlock /> */}
+            {/*  </div> */}
+            {/*  <div className="col-md-3">Latest Bids | User&apos;s bids</div> */}
+            {/* </div> */}
+          </Container>
+        </Box>
       </div>
     );
   }

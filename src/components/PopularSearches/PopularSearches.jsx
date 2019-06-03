@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Grid } from '@material-ui/core';
 
 const PopularSearches = ({ searches }) => (
-  <div className="row mt-4">
-    <div className="col">
-      Popular Searches:
-      {searches.slice(0, 10).map(search => (
-        <a className="ml-3" href={`?search=${search}`}>
-          {search}
-        </a>
-      ))}
-    </div>
-  </div>
+  <Grid container>
+    Popular Searches:
+    {searches.slice(0, 10).map(search => (
+      <a className="ml-3" href={`?search=${search}`}>
+        {search}
+      </a>
+    ))}
+  </Grid>
 );
 
 PopularSearches.propTypes = {
