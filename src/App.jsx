@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
@@ -41,23 +40,15 @@ class App extends Component {
             <PopularSearches
               searches={['popular search 1', 'popular search 2', 'popular search 3']}
             />
-            <Box mt={3}>
-              <Grid container>
-                <Grid item md={9}>
-                  <ProductsBlock />
-                </Grid>
-                <Grid item md={3}>
-                  Latest Bids | User&apos;s bids
-                </Grid>
+            <Grid container spacing={4}>
+              <Grid item md={9}>
+                <ProductsBlock />
               </Grid>
-            </Box>
+              <Grid item md={3}>
+                Latest Bids | User&apos;s bids
+              </Grid>
+            </Grid>
           </main>
-          {/* <div className="row mt-4"> */}
-          {/*  <div className="col-md-9"> */}
-          {/*    <ProductsBlock /> */}
-          {/*  </div> */}
-          {/*  <div className="col-md-3">Latest Bids | User&apos;s bids</div> */}
-          {/* </div> */}
         </Container>
       </div>
     );
