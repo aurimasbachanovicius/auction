@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const SortingModeSelect = ({ availableModes }) => (
-  <div className="form-group">
-    <select className="form-control">
+  <React.Fragment>
+    <InputLabel htmlFor="available-modes">Sorting</InputLabel>
+    <Select inputProps={{ id: 'available-modes' }}>
       {availableModes.map(mode => (
-        <option>{mode}</option>
+        <MenuItem value={mode} button="">
+          {mode}
+        </MenuItem>
       ))}
-    </select>
-  </div>
+    </Select>
+  </React.Fragment>
 );
 
 SortingModeSelect.propTypes = {
-  availableModes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  availableModes: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default SortingModeSelect;
