@@ -30,11 +30,12 @@ const categories = [
 
 const useStyles = makeStyles(theme => ({
   root: {
+    marginLeft: theme.spacing(6),
     padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
     width: 800,
-    height: 35
+    height: 40
   },
   textField: {
     marginLeft: theme.spacing(1),
