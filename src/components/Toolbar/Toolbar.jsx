@@ -45,16 +45,13 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
     marginLeft: theme.spacing(2),
     width: '100%',
-    backgroundColor: 'red',
     [theme.breakpoints.only('sm')]: {
       marginLeft: theme.spacing(2),
-      width: '65%',
-      backgroundColor: 'yellow'
+      width: '65%'
     },
     [theme.breakpoints.up('md')]: {
       marginLeft: theme.spacing(3),
-      width: '50%',
-      backgroundColor: 'green'
+      width: '50%'
     }
   },
   searchIcon: {

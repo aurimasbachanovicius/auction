@@ -33,20 +33,12 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginLeft: theme.spacing(6),
     padding: '2px 4px',
-    position: 'relative',
-    zIndex: '1',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     height: 40,
     backgroundColor: '#f1f3f4',
     boxShadow: 'none'
-    // [theme.breakpoints.down('md')]: {
-    //   width: 450
-    // },
-    // [theme.breakpoints.down('sm')]: {
-    //   width: 450
-    // }
   },
   textField: {
     marginLeft: theme.spacing(1),
