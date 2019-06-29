@@ -5,13 +5,16 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import Search from '../Search/Search';
 
@@ -40,11 +43,18 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: fade(theme.palette.common.white, 0.25)
     },
     marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(8),
+    marginLeft: theme.spacing(2),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    backgroundColor: 'red',
+    [theme.breakpoints.only('sm')]: {
+      marginLeft: theme.spacing(2),
+      width: '65%',
+      backgroundColor: 'yellow'
+    },
+    [theme.breakpoints.up('md')]: {
       marginLeft: theme.spacing(3),
-      width: 'auto'
+      width: '50%',
+      backgroundColor: 'green'
     }
   },
   searchIcon: {
@@ -162,22 +172,23 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" color="default" position="fixed">
+      <AppBar position="static" color="inherit" position="fixed">
         <Toolbar>
-          {/* Add hamburger menu when mobile */}
-          {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Open drawer"
-          >
-            <MenuIcon />
-          </IconButton> */}
           <Typography className={classes.title} variant="h6" noWrap>
             LOGO
           </Typography>
           <div className={classes.search}>
             <Search />
+            {/* <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput
+              }}
+            /> */}
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -208,7 +219,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MenuIcon />
             </IconButton>
           </div>
         </Toolbar>

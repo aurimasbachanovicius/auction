@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -32,10 +33,20 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginLeft: theme.spacing(6),
     padding: '2px 4px',
+    position: 'relative',
+    zIndex: '1',
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
-    width: 800,
-    height: 40
+    height: 40,
+    backgroundColor: '#f1f3f4',
+    boxShadow: 'none'
+    // [theme.breakpoints.down('md')]: {
+    //   width: 450
+    // },
+    // [theme.breakpoints.down('sm')]: {
+    //   width: 450
+    // }
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -46,7 +57,7 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     marginLeft: 8,
-    flex: 1
+    flex: 6
   },
   iconButton: {
     padding: 6
@@ -70,35 +81,37 @@ function Search() {
 
   return (
     <Paper className={classes.root}>
-      <TextField
-        select
-        label=""
-        className={classes.textField}
-        value={values.category}
-        onChange={handleChange('category')}
-        SelectProps={{
-          MenuProps: {
-            className: classes.menu
-          }
-        }}
-        InputProps={{
-          disableUnderline: true
-        }}
-      >
-        {categories.map(option => (
-          <MenuItem key={option.value} value={option.value} button="">
-            {option.label}
-          </MenuItem>
-        ))}
-      </TextField>
-      <InputBase className={classes.input} placeholder="Search item..." />
-      <IconButton className={classes.iconButton} aria-label="Search" href="">
-        <SearchIcon />
-      </IconButton>
-      <Divider className={classes.divider} />
-      <IconButton className={classes.iconButton} aria-label="Directions" href="">
-        <SettingsIcon />
-      </IconButton>
+      <Grid container alignItems="stretch">
+        <TextField
+          select
+          label=""
+          className={classes.textField}
+          value={values.category}
+          onChange={handleChange('category')}
+          SelectProps={{
+            MenuProps: {
+              className: classes.menu
+            }
+          }}
+          InputProps={{
+            disableUnderline: true
+          }}
+        >
+          {categories.map(option => (
+            <MenuItem key={option.value} value={option.value} button="">
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <InputBase className={classes.input} placeholder="Search item..." />
+        <IconButton className={classes.iconButton} aria-label="Search" href="">
+          <SearchIcon />
+        </IconButton>
+        <Divider className={classes.divider} />
+        <IconButton className={classes.iconButton} aria-label="Directions" href="">
+          <SettingsIcon />
+        </IconButton>
+      </Grid>
     </Paper>
   );
 }
