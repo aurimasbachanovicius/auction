@@ -37,8 +37,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     height: 40,
-    backgroundColor: '#f1f3f4',
-    boxShadow: 'none'
+    backgroundColor: '#f5f6f7',
+    boxShadow: 'none',
+    [theme.breakpoints.only('xs')]: {
+      marginLeft: theme.spacing(0)
+    }
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -49,7 +52,11 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     marginLeft: 8,
-    flex: 6
+    flex: 6,
+    '&:focus': {
+      zIndex: 1000,
+      backgroundColor: 'red'
+    }
   },
   iconButton: {
     padding: 6

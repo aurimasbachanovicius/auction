@@ -1,7 +1,9 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
+import { shadows } from '@material-ui/system';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -33,7 +35,8 @@ const useStyles = makeStyles(theme => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
-    }
+    },
+    color: 'rgba(0, 0, 0, 0.54)'
   },
   search: {
     position: 'relative',
@@ -42,16 +45,14 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25)
     },
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(2),
     width: '100%',
     [theme.breakpoints.only('sm')]: {
-      marginLeft: theme.spacing(2),
-      width: '65%'
+      marginLeft: theme.spacing(0),
+      width: '70%'
     },
     [theme.breakpoints.up('md')]: {
       marginLeft: theme.spacing(3),
-      width: '50%'
+      width: '45%'
     }
   },
   searchIcon: {
@@ -190,11 +191,12 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             {/* Active after user logs in */}
-            <IconButton aria-label="Show new notifications" color="inherit">
+            <IconButton aria-label="Show new notifications" color="rgba(0, 0, 0, 0.54)">
               <Badge badgeContent={2} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <Box m={1} />
             <Button variant="outlined" color="primary" size="medium" className={classes.margin}>
               My Account
             </Button>
