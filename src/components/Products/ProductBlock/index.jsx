@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Settings from '../Settings';
+import ProductCard from '../ProductCard';
 
 const ProductBlock = () => {
   const products = [];
@@ -10,10 +11,10 @@ const ProductBlock = () => {
       <Box mt={4}>
         <Grid container spacing={4}>
           <Grid item md={6}>
-            <Settings timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
+            <ProductCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
           </Grid>
           <Grid item md={6}>
-            <Settings timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
+            <ProductCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
           </Grid>
         </Grid>
       </Box>
