@@ -7,9 +7,13 @@ import ProductBlock from '../Products/ProductBlock';
 import PopularSearches from '../PopularSearches';
 
 const App = () => {
+  const drawerToggleClickHandler = () => {
+    // this.setState(prevState => ({ sideDrawerOpen: !prevState.sideDrawerOpen }));
+  };
+
   return (
     <React.Fragment>
-      <Toolbar />
+      <Toolbar drawerClickHandler={drawerToggleClickHandler} />
       <div style={{ height: '100%' }}>
         <Container maxWidth="lg">
           <main style={{ marginTop: 90 }}>
