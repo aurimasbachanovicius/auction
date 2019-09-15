@@ -1,10 +1,10 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
-import Toolbar from '@material-ui/core/Toolbar';
 import './index.css';
 import ProductBlock from '../Products/ProductBlock';
 import PopularSearches from '../PopularSearches';
+import PrimarySearchAppBar from '../Toolbar';
 
 const App = () => {
   const drawerToggleClickHandler = () => {
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <Toolbar drawerClickHandler={drawerToggleClickHandler} />
+      <PrimarySearchAppBar drawerClickHandler={drawerToggleClickHandler} />
       <div style={{ height: '100%' }}>
         <Container maxWidth="lg">
           <main style={{ marginTop: 90 }}>

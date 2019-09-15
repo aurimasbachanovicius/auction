@@ -93,9 +93,9 @@ function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  function handleProfileMenuOpen(event) {
-    setAnchorEl(event.currentTarget);
-  }
+  // function handleProfileMenuOpen(event) {
+  //   setAnchorEl(event.currentTarget);
+  // }
 
   function handleMobileMenuClose() {
     setMobileMoreAnchorEl(null);
@@ -166,7 +166,7 @@ function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" color="inherit" position="fixed">
+      <AppBar position="fixed" color="inherit">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             LOGO
