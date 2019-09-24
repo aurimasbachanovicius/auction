@@ -2,7 +2,6 @@ import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -14,7 +13,9 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import { Link } from 'react-router-dom';
 import Search from '../Search';
+import ToolbarMenu from '../ToolbarMenu';
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -168,9 +169,11 @@ function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="fixed" color="inherit">
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            LOGO
-          </Typography>
+          <Link to="/">
+            <Typography className={classes.title} variant="h6" noWrap>
+              LOGO
+            </Typography>
+          </Link>
           <div className={classes.search}>
             <Search />
             {/* <div className={classes.searchIcon}>
@@ -186,21 +189,7 @@ function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            {/* Active after user logs in */}
-            <IconButton aria-label="Show new notifications" color="rgba(0, 0, 0, 0.54)">
-              <Badge badgeContent={2} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <Box m={1} />
-            <Button variant="outlined" color="primary" size="medium" className={classes.margin}>
-              My Account
-            </Button>
-
-            {/* Active before user logs in */}
-            {/* <Button variant="outlined" color="primary" size="medium" className={classes.margin}>
-              Login | Register
-            </Button> */}
+            <ToolbarMenu />
 
             <Button variant="contained" color="primary" size="medium" className={classes.margin}>
               Sell Now
