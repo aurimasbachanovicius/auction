@@ -4,7 +4,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -14,6 +13,8 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { Link } from 'react-router-dom';
+import './index.css';
+import logo from '../../assets/logo/logo_transparent.png';
 import Search from '../Search';
 import ToolbarMenu from '../ToolbarMenu';
 
@@ -94,10 +95,6 @@ function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  // function handleProfileMenuOpen(event) {
-  //   setAnchorEl(event.currentTarget);
-  // }
-
   function handleMobileMenuClose() {
     setMobileMoreAnchorEl(null);
   }
@@ -170,27 +167,14 @@ function PrimarySearchAppBar() {
       <AppBar position="fixed" color="inherit">
         <Toolbar>
           <Link to="/">
-            <Typography className={classes.title} variant="h6" noWrap>
-              LOGO
-            </Typography>
+            <img src={logo} alt="logo" />
           </Link>
           <div className={classes.search}>
             <Search />
-            {/* <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-            /> */}
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <ToolbarMenu />
-
             <Button variant="contained" color="primary" size="medium" className={classes.margin}>
               Sell Now
             </Button>

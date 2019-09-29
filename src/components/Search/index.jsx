@@ -32,13 +32,15 @@ const categories = [
 const useStyles = makeStyles(theme => ({
   root: {
     marginLeft: theme.spacing(6),
+    transition: 'box-shadow 200ms ease-in',
+    border: '1px solid #EBEBEB',
+    borderRadius: 4,
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    height: 48,
     padding: '2px 4px',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-    height: 40,
-    backgroundColor: '#f5f6f7',
-    boxShadow: 'none',
     [theme.breakpoints.only('xs')]: {
       marginLeft: theme.spacing(0)
     }

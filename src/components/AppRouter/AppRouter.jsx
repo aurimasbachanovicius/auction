@@ -1,10 +1,34 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Homepage from '../Homepage';
 import PrimarySearchAppBar from '../Toolbar';
 import NotFound from '../ErrorPage/NotFound';
 import Authentication from '../Account/Authentication';
+
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#0B409C' }
+  },
+  overrides: {
+    MuiPaper: {
+      elevation4: {
+        boxShadow: 'none',
+        borderBottom: '1px solid #e4e4e4'
+      }
+    },
+    MuiToolbar: {
+      regular: {
+        '@media (min-width: 600px)': {
+          minHeight: '72px'
+        }
+      }
+    }
+  }
+});
 
 function AppRouter() {
   const drawerToggleClickHandler = () => {
@@ -12,21 +36,20 @@ function AppRouter() {
   };
 
   return (
-    <Router>
-      <PrimarySearchAppBar drawerClickHandler={drawerToggleClickHandler} />
-
-      <Link to="/">Home</Link>
-      <Link to="/signup">Signup</Link>
-      <div style={{ height: '100%' }}>
-        <Container maxWidth="lg" style={{ marginTop: 90 }}>
-          <Switch>
-            <Route path="/" exact component={Homepage} />
-            <Route path="/signup" component={Authentication} />
-            <Route component={NotFound} />
-          </Switch>
-        </Container>
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <PrimarySearchAppBar drawerClickHandler={drawerToggleClickHandler} />
+        <div style={{ height: '100%' }}>
+          <Container maxWidth="lg" style={{ marginTop: 90 }}>
+            <Switch>
+              <Route path="/" exact component={Homepage} />
+              <Route path="/signup" component={Authentication} />
+              <Route component={NotFound} />
+            </Switch>
+          </Container>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
