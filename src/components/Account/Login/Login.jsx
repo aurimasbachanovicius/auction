@@ -5,9 +5,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Login = (
-  <form noValidate>
+const Login = ({ onSubmit }) => (
+  <form noValidate onSubmit={onSubmit}>
     <TextField
       variant="outlined"
       margin="normal"
@@ -43,5 +44,9 @@ const Login = (
     </Grid>
   </form>
 );
+
+Login.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default Login;

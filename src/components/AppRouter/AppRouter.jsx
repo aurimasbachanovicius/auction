@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Homepage from '../Homepage';
 import PrimarySearchAppBar from '../Toolbar';
 import NotFound from '../ErrorPage/NotFound';
-import Authentication from '../Account/Authentication';
+import AuthenticateUser from '../../containers/AuthenticateUser';
 
 function AppRouter() {
   const drawerToggleClickHandler = () => {
@@ -21,7 +21,7 @@ function AppRouter() {
         <Container maxWidth="lg" style={{ marginTop: 90 }}>
           <Switch>
             <Route path="/" exact component={Homepage} />
-            <Route path="/signup" component={Authentication} />
+            <Route path="/signup" component={AuthenticateUser} />
             <Route component={NotFound} />
           </Switch>
         </Container>
