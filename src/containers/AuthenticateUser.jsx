@@ -8,25 +8,31 @@ import { loginUser, registerUser } from '../actions/user.actions';
 const AuthenticateUser = ({ dispatch }) => {
   const login = e => {
     e.preventDefault();
-
-    // eslint-disable-next-line no-console
-    console.log('dispatch login');
     dispatch(loginUser(1));
   };
 
   const register = e => {
     e.preventDefault();
-
-    // eslint-disable-next-line no-console
-    console.log('dispatch register');
     dispatch(registerUser(2));
   };
 
-  return <Authentication onLoginSubmit={login} onRegisterSubmit={register} />;
+  return (
+    <React.Fragment>
+      User ID:
+      <Authentication onLoginSubmit={login} onRegisterSubmit={register} />
+    </React.Fragment>
+  );
 };
+
+function mapStateToProps(state) {
+  // eslint-disable-next-line no-console
+  console.log(state);
+
+  return {};
+}
 
 AuthenticateUser.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-export default connect()(AuthenticateUser);
+export default connect(mapStateToProps)(AuthenticateUser);
