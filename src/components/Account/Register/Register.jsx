@@ -3,9 +3,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
-const Register = (
-  <form noValidate>
+const Register = ({ onSubmit }) => (
+  <form noValidate onSubmit={onSubmit}>
     <TextField
       variant="outlined"
       margin="normal"
@@ -45,5 +46,9 @@ const Register = (
     </Button>
   </form>
 );
+
+Register.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default Register;
