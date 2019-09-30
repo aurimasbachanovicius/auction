@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    'no-use-before-define': 0,
     'prettier/prettier': ['error']
   }
 };

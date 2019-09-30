@@ -1,9 +1,20 @@
-import { LOGIN_USER, REGISTER_USER } from '../actions/user.actions';
+import {
+  USER_LOGIN_REQUEST,
+  REGISTER_USER,
+  USER_LOGIN_SUCCESS,
+  USER_LOGIN_ERROR
+} from '../actions/user.actions';
 
-const userAuthentication = (state = [], action) => {
+const initialState = { user: null, loggingIn: false, loggedIn: false };
+
+const userAuthentication = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_USER:
-      return { id: action.id };
+    case USER_LOGIN_REQUEST:
+      return { ...state, loggingIn: true };
+    case USER_LOGIN_SUCCESS:
+      return { ...state, loggedIn: true };
+    case USER_LOGIN_ERROR:
+      return { ...state, loggingIn: false };
     case REGISTER_USER:
       return { id: action.id };
     default:

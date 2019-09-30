@@ -2,37 +2,68 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import Authentication from '../components/Account/Authentication';
-import { loginUser, registerUser } from '../actions/user.actions';
+import { userActions } from '../actions/user.actions';
+import Login from '../components/Account/Login/Login';
 
-const AuthenticateUser = ({ dispatch }) => {
-  const login = e => {
+class AuthenticateUser extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: '',
+      password: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
-    dispatch(loginUser(1));
-  };
 
-  const register = e => {
-    e.preventDefault();
-    dispatch(registerUser(2));
-  };
+    const { email, password } = this.state;
+    const { dispatch } = this.props;
 
-  return (
-    <React.Fragment>
-      User ID:
-      <Authentication onLoginSubmit={login} onRegisterSubmit={register} />
-    </React.Fragment>
-  );
-};
+    if (email && password) {
+      dispatch(userActions.login(email, password));
+    }
+  }
+
+  render() {
+    const { loggingIn } = this.props;
+    const { email, password } = this.state;
+
+    return (
+      <React.Fragment>
+        User ID:
+        <Login
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          email={email}
+          password={password}
+          loggingIn={loggingIn}
+        />
+      </React.Fragment>
+    );
+  }
+}
 
 function mapStateToProps(state) {
-  // eslint-disable-next-line no-console
-  console.log(state);
+  const { loggingIn } = state.userAuthentication;
 
-  return {};
+  return {
+    loggingIn
+  };
 }
 
 AuthenticateUser.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  loggingIn: PropTypes.bool.isRequired
 };
 
 export default connect(mapStateToProps)(AuthenticateUser);
