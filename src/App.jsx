@@ -5,9 +5,9 @@ import { ThemeProvider } from '@material-ui/styles';
 import ProductsPage from './components/Homepage';
 import MainNavigation from './components/Toolbar';
 import ErrorPage from './components/ErrorPage/NotFound';
-import AuthenticateUser from './containers/AuthenticateUser';
 
 import './App.css';
+import Authentication from './components/Account/Authentication';
 
 const theme = createMuiTheme({
   palette: {
@@ -43,7 +43,7 @@ const App = () => {
         <main className="main-content">
           <Switch>
             <Route path="/" component={ProductsPage} exact />
-            <Route path="/signup" component={AuthenticateUser} />
+            <Route path="/signup" component={Authentication} />
             <Route component={ErrorPage} />
           </Switch>
         </main>
