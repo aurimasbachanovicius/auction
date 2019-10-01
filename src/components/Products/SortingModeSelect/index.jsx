@@ -9,7 +9,7 @@ const SortingModeSelect = ({ availableModes }) => (
     <InputLabel htmlFor="available-modes">Sorting</InputLabel>
     <Select value="" inputProps={{ id: 'available-modes' }}>
       {availableModes.map(mode => (
-        <MenuItem value={mode} key={mode} button="">
+        <MenuItem value={mode} key={mode} button>
           {mode}
         </MenuItem>
       ))}

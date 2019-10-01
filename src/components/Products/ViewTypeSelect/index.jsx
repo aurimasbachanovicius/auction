@@ -9,7 +9,7 @@ const ViewTypeSelect = ({ availableTypes }) => (
     <InputLabel htmlFor="available-modes">Types</InputLabel>
     <Select value="" inputProps={{ id: 'available-modes' }}>
       {availableTypes.map(type => (
-        <MenuItem value={type} key={type} button="">
+        <MenuItem value={type} key={type} button>
           {type}
         </MenuItem>
       ))}
