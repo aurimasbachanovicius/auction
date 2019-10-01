@@ -14,16 +14,15 @@ const theme = createMuiTheme({
     primary: { main: '#0B409C' }
   },
   overrides: {
-    MuiPaper: {
-      elevation4: {
-        boxShadow: 'none',
+    MuiAppBar: {
+      root: {
         borderBottom: '1px solid #e4e4e4'
       }
     },
     MuiToolbar: {
       regular: {
         '@media (min-width: 600px)': {
-          minHeight: '72px'
+          minHeight: '70px'
         }
       }
     },
@@ -32,7 +31,8 @@ const theme = createMuiTheme({
         color: 'inherit'
       }
     }
-  }
+  },
+  shadows: Array(25).fill('none')
 });
 
 class App extends Component {

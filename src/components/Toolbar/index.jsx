@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.up('md')]: {
       marginLeft: theme.spacing(3),
-      width: '45%'
+      width: '55%'
     }
   },
   searchIcon: {
@@ -146,7 +146,7 @@ function PrimarySearchAppBar() {
         <p>Login | Register</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="Place new ad" color="inherit">
+        <IconButton aria-label="Sell an item" color="inherit">
           <MailIcon />
         </IconButton>
         <p>Sell Now</p>

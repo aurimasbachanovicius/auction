@@ -13,7 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 const categories = [
   {
     value: 'All',
-    label: 'All'
+    label: 'All Categories'
   },
   {
     value: 'Computers',
@@ -33,10 +33,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginLeft: theme.spacing(6),
     transition: 'box-shadow 200ms ease-in',
-    border: '1px solid #EBEBEB',
+    border: '1px solid #DEDEDE',
     borderRadius: 4,
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    height: 48,
+    height: 40,
     padding: '2px 4px',
     width: '100%',
     display: 'flex',
@@ -47,7 +46,8 @@ const useStyles = makeStyles(theme => ({
   },
   textField: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
+    marginTop: 3
   },
   menu: {
     width: 200
@@ -55,9 +55,9 @@ const useStyles = makeStyles(theme => ({
   input: {
     marginLeft: 8,
     flex: 6,
+    color: 'inherit',
     '&:focus': {
-      zIndex: 1000,
-      backgroundColor: 'red'
+      zIndex: 1000
     }
   },
   iconButton: {
@@ -104,6 +104,7 @@ function Search() {
             </MenuItem>
           ))}
         </TextField>
+        <Divider className={classes.divider} />
         <InputBase className={classes.input} placeholder="Search item..." />
         <IconButton className={classes.iconButton} aria-label="Search" href="">
           <SearchIcon />
