@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Login = ({ onSubmit, onChange, email, password, loggingIn }) => (
+const Login = ({ onSubmit, onChange, email, password, loggingIn, submitted }) => (
   <form noValidate onSubmit={onSubmit}>
     <TextField
       variant="outlined"
@@ -21,6 +21,8 @@ const Login = ({ onSubmit, onChange, email, password, loggingIn }) => (
       autoComplete="email"
       autoFocus
       onChange={onChange}
+      error={submitted && !email}
+      helperText={submitted && !email && 'Privalomas laukas'}
     />
     <TextField
       variant="outlined"
@@ -34,6 +36,8 @@ const Login = ({ onSubmit, onChange, email, password, loggingIn }) => (
       id="password"
       autoComplete="current-password"
       onChange={onChange}
+      error={submitted && !password}
+      helperText={submitted && !password && 'Privalomas laukas'}
     />
     <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
     <Button type="submit" fullWidth variant="contained" color="primary">
@@ -60,7 +64,8 @@ Login.propTypes = {
   onChange: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
-  loggingIn: PropTypes.bool.isRequired
+  loggingIn: PropTypes.bool.isRequired,
+  submitted: PropTypes.bool.isRequired
 };
 
 export default Login;

@@ -11,7 +11,8 @@ class AuthenticateUser extends React.Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      submitted: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -26,6 +27,8 @@ class AuthenticateUser extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    this.setState({ submitted: true });
+
     const { email, password } = this.state;
     const { dispatch } = this.props;
 
@@ -36,11 +39,11 @@ class AuthenticateUser extends React.Component {
 
   render() {
     const { error, loggingIn, loggedIn } = this.props;
-    const { email, password } = this.state;
+    const { email, password, submitted } = this.state;
 
     return (
       <React.Fragment>
-        {error && <p>{error}</p>}
+        {error && <span style={{ color: 'red' }}>{error}</span>}
         {loggedIn && <span style={{ color: 'green' }}>Logged In</span>}
         <Login
           onSubmit={this.handleSubmit}
@@ -48,6 +51,7 @@ class AuthenticateUser extends React.Component {
           email={email}
           password={password}
           loggingIn={loggingIn}
+          submitted={submitted}
         />
       </React.Fragment>
     );
