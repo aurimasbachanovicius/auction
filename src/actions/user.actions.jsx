@@ -1,3 +1,5 @@
+import validateLogin from '../services/userLoginValidator';
+
 export const REGISTER_USER = 'REGISTER_USER';
 
 export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
@@ -13,13 +15,12 @@ const login = (email, password) => {
   return dispatch => {
     dispatch(request(email));
 
-    setTimeout(() => {
-      dispatch(success(email));
-    }, 1000);
+    if (validateLogin(email, password) === false) {
+      dispatch(failure('Neteisingi prisijungimo duomenys'));
+      return;
+    }
 
-    setTimeout(() => {
-      dispatch(failure('error string'));
-    }, 10000);
+    dispatch(success(email));
   };
 };
 

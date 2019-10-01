@@ -35,12 +35,13 @@ class AuthenticateUser extends React.Component {
   }
 
   render() {
-    const { loggingIn } = this.props;
+    const { error, loggingIn, loggedIn } = this.props;
     const { email, password } = this.state;
 
     return (
       <React.Fragment>
-        User ID:
+        {error && <p>{error}</p>}
+        {loggedIn && <span style={{ color: 'green' }}>Logged In</span>}
         <Login
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
@@ -54,16 +55,25 @@ class AuthenticateUser extends React.Component {
 }
 
 function mapStateToProps(state) {
-  const { loggingIn } = state.userAuthentication;
+  const { loggingIn, error, loggedIn } = state.userAuthentication;
 
   return {
-    loggingIn
+    loggingIn,
+    error,
+    loggedIn
   };
 }
 
+AuthenticateUser.defaultProps = {
+  error: null,
+  loggedIn: false
+};
+
 AuthenticateUser.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  loggingIn: PropTypes.bool.isRequired
+  loggingIn: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+  loggedIn: PropTypes.bool
 };
 
 export default connect(mapStateToProps)(AuthenticateUser);
