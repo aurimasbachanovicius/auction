@@ -1,15 +1,18 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import AppRouter from './components/AppRouter/AppRouter';
+import ReactDOM from 'react-dom';
 import rootReducer from './reducers';
+import 'typeface-roboto';
+
+import './index.css';
+import App from './App';
 
 const store = createStore(rootReducer);
 
-render(
+ReactDOM.render(
   <Provider store={store}>
-    <AppRouter />
+    <App />
   </Provider>,
   document.getElementById('root')
 );
