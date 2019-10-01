@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { userActions } from '../actions/user.actions';
-import Login from '../components/Account/Login/Login';
+import Login from '../components/Account/Login';
 
 class AuthenticateUser extends React.Component {
   constructor(props) {

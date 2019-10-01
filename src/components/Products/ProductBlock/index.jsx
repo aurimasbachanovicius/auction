@@ -8,7 +8,7 @@ const ProductBlock = () => {
   const products = [];
   for (let i = 0; i < 2; i += 1) {
     products.push(
-      <Box mt={4}>
+      <Box mt={4} key={i}>
         <Grid container spacing={4}>
           <Grid item md={6}>
             <ProductCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />

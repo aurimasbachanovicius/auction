@@ -7,9 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { EuroSymbol, PanTool } from '@material-ui/icons';
+import { PanTool } from '@material-ui/icons';
 import FormControl from '@material-ui/core/FormControl';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
@@ -24,12 +23,6 @@ const useStyles = makeStyles({
 const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
   const classes = useStyles();
 
-  const adornment = (
-    <InputAdornment position="start">
-      <EuroSymbol />
-    </InputAdornment>
-  );
-
   return (
     <Card style={{ width: `${100}%` }}>
       <CardActionArea>
@@ -43,22 +36,16 @@ const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
         <Typography gutterBottom variant="h5" component="h2">
           {itemName}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          <Box component="p">{`Current: ${currentBid} Eur`}</Box>
-          <Box component="p">{`End after: ${timeUntilBidEnd} Hour`}</Box>
+        <Typography variant="body2" color="textSecondary" component="ul">
+          <Box component="li">{`Current: ${currentBid} Eur`}</Box>
+          <Box component="li">{`End after: ${timeUntilBidEnd} Hour`}</Box>
         </Typography>
       </CardContent>
       <CardActions>
         <FormControl fullWidth>
           <Grid container spacing={2}>
             <Grid item md={8}>
-              <TextField
-                fullWidth
-                id="your-bid"
-                variant="outlined"
-                label="Your bid"
-                startAdornment={adornment}
-              />
+              <TextField fullWidth id="your-bid" variant="outlined" label="Your bid" />
             </Grid>
             <Grid item md={4}>
               <Box mt={0.5}>

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import ProductsPage from './components/Homepage';
-import MainNavigation from './components//Toolbar';
+import MainNavigation from './components/Toolbar';
 import ErrorPage from './components/ErrorPage/NotFound';
 import AuthenticateUser from './containers/AuthenticateUser';
 
@@ -35,23 +35,21 @@ const theme = createMuiTheme({
   shadows: Array(25).fill('none')
 });
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <ThemeProvider theme={theme}>
-          <MainNavigation />
-          <main className="main-content">
-            <Switch>
-              <Route path="/" component={ProductsPage} exact />
-              <Route path="/signup" component={AuthenticateUser} />
-              <Route component={ErrorPage} />
-            </Switch>
-          </main>
-        </ThemeProvider>
-      </BrowserRouter>
-    );
-  }
-}
+const App = () => {
+  return (
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <MainNavigation />
+        <main className="main-content">
+          <Switch>
+            <Route path="/" component={ProductsPage} exact />
+            <Route path="/signup" component={AuthenticateUser} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </main>
+      </ThemeProvider>
+    </BrowserRouter>
+  );
+};
 
 export default App;

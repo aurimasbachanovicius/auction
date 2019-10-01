@@ -7,9 +7,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 const SortingModeSelect = ({ availableModes }) => (
   <React.Fragment>
     <InputLabel htmlFor="available-modes">Sorting</InputLabel>
-    <Select inputProps={{ id: 'available-modes' }}>
+    <Select value="" inputProps={{ id: 'available-modes' }}>
       {availableModes.map(mode => (
-        <MenuItem value={mode} button="">
+        <MenuItem value={mode} key={mode} button="">
           {mode}
         </MenuItem>
       ))}

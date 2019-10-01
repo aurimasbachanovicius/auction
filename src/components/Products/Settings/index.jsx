@@ -16,7 +16,7 @@ const Settings = () => {
   const classes = useStyles();
 
   return (
-    <Box fullwidth>
+    <Box>
       <FormControl className={classes.formControl}>
         <SortingModeSelect availableModes={['Recent', 'AnotherMode', 'ThirdMode']} />
       </FormControl>
