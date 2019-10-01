@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+// @todo-aurimas fix this props hell. Composite better.
 const Login = ({ onSubmit, onChange, email, password, loggingIn, submitted }) => (
   <form noValidate onSubmit={onSubmit}>
     <TextField
