@@ -3,7 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { userActions } from '../actions/user.actions';
-import Login from '../components/Account/Login';
+import LoginForm from '../components/Account/LoginForm';
+import EmailInput from '../components/Account/EmailInput';
+import PasswordInput from '../components/Account/PasswordInput';
+import RememberMeCheckbox from '../components/Account/RememberMeCheckbox';
+import LoginButton from '../components/Account/LoginButton';
 
 class AuthenticateUser extends React.Component {
   constructor(props) {
@@ -45,14 +49,13 @@ class AuthenticateUser extends React.Component {
       <React.Fragment>
         {error && <span style={{ color: 'red' }}>{error}</span>}
         {loggedIn && <span style={{ color: 'green' }}>Logged In</span>}
-        <Login
-          onSubmit={this.handleSubmit}
-          onChange={this.handleChange}
-          email={email}
-          password={password}
-          loggingIn={loggingIn}
-          submitted={submitted}
-        />
+
+        <LoginForm onSubmit={this.handleSubmit}>
+          <EmailInput onChange={this.handleChange} submitted={submitted} value={email} />
+          <PasswordInput onChange={this.handleChange} submitted={submitted} value={password} />
+          <RememberMeCheckbox />
+          <LoginButton loggingIn={loggingIn} />
+        </LoginForm>
       </React.Fragment>
     );
   }
