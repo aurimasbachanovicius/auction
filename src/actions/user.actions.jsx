@@ -6,7 +6,6 @@ export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_ERROR = 'USER_LOGIN_ERROR';
 
-// eslint-disable-next-line no-unused-vars
 const login = (email, password) => {
   const request = user => ({ type: USER_LOGIN_REQUEST, user });
   const success = user => ({ type: USER_LOGIN_SUCCESS, user });
