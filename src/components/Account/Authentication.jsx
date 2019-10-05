@@ -1,9 +1,8 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ThumbUp from '@material-ui/icons/ThumbUp';
-import Button from '@material-ui/core/Button';
-import Register from './Register/Register';
 import AuthenticateUser from '../../containers/AuthenticateUser';
+import Register from './Register';
+import Socials from './Socials';
 
 function Authentication() {
   return (
@@ -13,14 +12,7 @@ function Authentication() {
           Connect to use per socials:
         </Grid>
         <Grid item md={6}>
-          <Button variant="contained" color="primary" fullWidth>
-            <ThumbUp style={{ left: 40, position: 'absolute' }} />
-            Facebook
-          </Button>
-          <Button variant="contained" color="default" fullWidth style={{ marginTop: 15 }}>
-            <ThumbUp style={{ left: 40, position: 'absolute' }} />
-            Twitter
-          </Button>
+          <Socials />
         </Grid>
       </Grid>
       <Grid container spacing={4} style={{ marginTop: 15 }}>
