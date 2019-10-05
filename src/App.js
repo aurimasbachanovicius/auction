@@ -26,6 +26,11 @@ const theme = createMuiTheme({
         }
       }
     },
+    MuiButton: {
+      root: {
+        textTransform: 'capitalize'
+      }
+    },
     MuiIconButton: {
       root: {
         color: 'inherit'
