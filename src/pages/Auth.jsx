@@ -1,10 +1,10 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import AuthenticateUser from '../../containers/AuthenticateUser';
-import Register from './Register';
-import Socials from './Socials';
+import AuthenticateUser from '../containers/AuthenticateUser';
+import Register from '../components/Account/Register';
+import Socials from '../components/Account/Socials';
 
-function Authentication() {
+function AuthPage() {
   return (
     <React.Fragment>
       <Grid container spacing={4}>
@@ -29,4 +29,4 @@ function Authentication() {
   );
 }
 
-export default Authentication;
+export default AuthPage;

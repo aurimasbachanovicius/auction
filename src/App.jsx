@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import ProductsPage from './components/Homepage';
+import ItemsPage from './pages/Items';
 import MainNavigation from './components/Toolbar';
-import ErrorPage from './components/ErrorPage/NotFound';
+import NotFoundPage from './pages/NotFound';
+import AuthPage from './pages/Auth';
 
 import './App.css';
-import Authentication from './components/Account/Authentication';
 
 const theme = createMuiTheme({
   palette: {
@@ -47,9 +47,9 @@ const App = () => {
         <MainNavigation />
         <main className="main-content">
           <Switch>
-            <Route path="/" component={ProductsPage} exact />
-            <Route path="/signup" component={Authentication} />
-            <Route component={ErrorPage} />
+            <Route path="/" component={ItemsPage} exact />
+            <Route path="/signup" component={AuthPage} exact />
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
       </ThemeProvider>

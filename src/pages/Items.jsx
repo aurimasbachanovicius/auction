@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ProductBlock from '../Products/ProductBlock';
+import ProductBlock from '../components/Products/ProductBlock';
 
-const Homepage = () => {
+const ItemsPage = () => {
   return (
     <React.Fragment>
       <Grid container spacing={4}>
@@ -14,4 +14,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default ItemsPage;
