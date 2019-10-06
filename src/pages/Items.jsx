@@ -1,13 +1,17 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ItemBlock from '../components/Items/ItemBlock/ItemBlock';
+import ItemList from '../components/Items/ItemList/ItemList';
+import AdvancedFilters from '../components/Items/AdvancedFilters/AdvancedFilters';
 
 const ItemsPage = () => {
   return (
     <React.Fragment>
       <Grid container spacing={4}>
-        <Grid item md={9}>
-          <ItemBlock />
+        <Grid item md={2}>
+          <AdvancedFilters />
+        </Grid>
+        <Grid item md={10}>
+          <ItemList />
         </Grid>
       </Grid>
     </React.Fragment>
