@@ -52,7 +52,12 @@ class AuthenticateUser extends React.Component {
 
         <LoginForm onSubmit={this.handleSubmit}>
           <EmailInput onChange={this.handleChange} submitted={submitted} value={email} />
-          <PasswordInput onChange={this.handleChange} submitted={submitted} value={password} />
+          <PasswordInput
+            name="password"
+            onChange={this.handleChange}
+            submitted={submitted}
+            value={password}
+          />
           <RememberMeCheckbox />
           <LoginButton loggingIn={loggingIn} />
         </LoginForm>

@@ -1,6 +1,6 @@
 import React from 'react';
-import LoggedIn from './LoggedIn/LoggedIn';
-import Guest from './Guest/Guest';
+import LoggedIn from './LoggedIn';
+import Guest from './Guest';
 
 const UserMenu = () => {
   const userLoggedIn = false;
