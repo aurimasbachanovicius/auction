@@ -1,25 +1,27 @@
-import {
-  USER_LOGIN_REQUEST,
-  REGISTER_USER,
-  USER_LOGIN_SUCCESS,
-  USER_LOGIN_ERROR
-} from '../actions/user.actions';
+import { loginActions, registerActions } from '../actions/user.actions';
 
-const initialState = { user: null, loggingIn: false, loggedIn: false, error: null };
-
-const userAuthentication = (state = initialState, action) => {
+export const userAuthentication = (state = {}, action) => {
   switch (action.type) {
-    case USER_LOGIN_REQUEST:
-      return { ...state, loggedIn: false, loggingIn: true };
-    case USER_LOGIN_SUCCESS:
-      return { ...state, loggedIn: true, loggingIn: false, error: null };
-    case USER_LOGIN_ERROR:
-      return { ...state, loggedIn: false, loggingIn: false, error: action.error };
-    case REGISTER_USER:
-      return { id: action.id };
+    case loginActions.REQUEST:
+      return { loggingIn: true };
+    case loginActions.SUCCESS:
+      return { loggedIn: true };
+    case loginActions.ERROR:
+      return { error: action.error };
     default:
       return state;
   }
 };
 
-export default userAuthentication;
+export const userRegistration = (state = {}, action) => {
+  switch (action.type) {
+    case registerActions.REQUEST:
+      return { processing: true };
+    case registerActions.SUCCESS:
+      return { success: true };
+    case registerActions.ERROR:
+      return { error: action.error };
+    default:
+      return state;
+  }
+};

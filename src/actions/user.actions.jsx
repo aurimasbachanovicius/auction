@@ -1,20 +1,26 @@
-import validateLogin from '../services/userLoginValidator';
+import userValidator from '../services/userValidator';
 
-export const REGISTER_USER = 'REGISTER_USER';
+export const loginActions = {
+  REQUEST: 'USER_LOGIN_REQUEST',
+  SUCCESS: 'USER_LOGIN_SUCCESS',
+  ERROR: 'USER_LOGIN_ERROR'
+};
 
-export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
-export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
-export const USER_LOGIN_ERROR = 'USER_LOGIN_ERROR';
+export const registerActions = {
+  REQUEST: 'USER_REGISTER_REQUEST',
+  SUCCESS: 'USER_REGISTER_SUCCESS',
+  ERROR: 'USER_REGISTER_ERROR'
+};
 
 const login = (email, password) => {
-  const request = user => ({ type: USER_LOGIN_REQUEST, user });
-  const success = user => ({ type: USER_LOGIN_SUCCESS, user });
-  const failure = error => ({ type: USER_LOGIN_ERROR, error });
+  const request = user => ({ type: loginActions.REQUEST, user });
+  const success = user => ({ type: loginActions.SUCCESS, user });
+  const failure = error => ({ type: loginActions.ERROR, error });
 
   return dispatch => {
     dispatch(request(email));
 
-    if (validateLogin(email, password) === false) {
+    if (userValidator.validateLogin(email, password) === false) {
       dispatch(failure('Neteisingi prisijungimo duomenys'));
       return;
     }
@@ -23,11 +29,21 @@ const login = (email, password) => {
   };
 };
 
-const registerUser = id => {
-  return { type: REGISTER_USER, id };
+const register = (email, password) => {
+  const request = user => ({ type: registerActions.REQUEST, user });
+  const success = user => ({ type: registerActions.SUCCESS, user });
+  const failure = error => ({ type: registerActions.ERROR, error });
+
+  return dispatch => {
+    dispatch(request(email));
+
+    if (userValidator.validateRegister(email, password) === false) {
+      dispatch(dispatch(failure('Laukai negali būti tušti')));
+      return;
+    }
+
+    dispatch(success(email));
+  };
 };
 
-export const userActions = {
-  login,
-  registerUser
-};
+export const userActions = { login, register };
