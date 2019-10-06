@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   }
 });
 
-const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
+const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
   const classes = useStyles();
 
   return (
@@ -62,10 +62,10 @@ const ProductCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
   );
 };
 
-ProductCard.propTypes = {
+ItemCard.propTypes = {
   currentBid: PropTypes.number.isRequired,
   itemName: PropTypes.string.isRequired,
   timeUntilBidEnd: PropTypes.number.isRequired
 };
 
-export default ProductCard;
+export default ItemCard;

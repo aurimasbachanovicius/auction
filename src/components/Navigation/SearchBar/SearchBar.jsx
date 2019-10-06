@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Search() {
+function SearchBar() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     category: 'All'
@@ -118,4 +118,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchBar;

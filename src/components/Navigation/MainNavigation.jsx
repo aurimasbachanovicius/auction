@@ -13,10 +13,10 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { Link } from 'react-router-dom';
-import './index.css';
-import logo from '../../assets/logo/logo_transparent.png';
-import Search from '../Search';
-import ToolbarMenu from '../ToolbarMenu';
+import './MainNavigation.css';
+import Logo from '../../assets/logo/logo_transparent.png';
+import Search from './SearchBar/SearchBar';
+import ToolbarMenu from './UserMenu/UserMenu';
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -87,7 +87,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function PrimarySearchAppBar() {
+function MainNavigation() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -167,7 +167,7 @@ function PrimarySearchAppBar() {
       <AppBar position="fixed" color="inherit">
         <Toolbar>
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={Logo} alt="logo" />
           </Link>
           <div className={classes.search}>
             <Search />
@@ -198,4 +198,4 @@ function PrimarySearchAppBar() {
   );
 }
 
-export default PrimarySearchAppBar;
+export default MainNavigation;
