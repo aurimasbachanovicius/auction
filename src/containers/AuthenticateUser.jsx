@@ -78,12 +78,13 @@ function mapStateToProps(state) {
 
 AuthenticateUser.defaultProps = {
   error: null,
-  loggedIn: false
+  loggedIn: false,
+  loggingIn: false
 };
 
 AuthenticateUser.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  loggingIn: PropTypes.bool.isRequired,
+  loggingIn: PropTypes.bool,
   error: PropTypes.string,
   loggedIn: PropTypes.bool
 };

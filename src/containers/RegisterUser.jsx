@@ -1,57 +1,89 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import RegisterForm from '../components/Account/RegisterForm';
 import EmailInput from '../components/Account/EmailInput';
 import PasswordInput from '../components/Account/PasswordInput';
+import { userActions } from '../actions';
+import AgreeWithPoliciesCheckbox from '../components/Account/AgreeWithPoliciesCheckbox';
 
 class RegisterUser extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      form: {
-        email: '',
-        password: '',
-        repeatPassword: '',
-        agreeWithPolicies: false
-      },
+      email: '',
+      password: '',
+      repeatPassword: '',
+      agreeWithPolicies: false,
       submitted: false
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
     const { name, value } = e.target;
-    this.setState({ form: { [name]: value } });
+    this.setState({ [name]: value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
     this.setState({ submitted: true });
+    const { dispatch } = this.props;
+    const { email, password } = this.state;
 
-    // @todo dispatch action
+    dispatch(userActions.register(email, password));
   }
 
   render() {
-    const { submitted, form } = this.state;
+    const { submitted, email, password, repeatPassword, agreeWithPolicies } = this.state;
+    const { processing, error, success } = this.props;
+
     return (
       <RegisterForm onSubmit={this.handleSubmit}>
-        <EmailInput onChange={this.handleChange} submitted={submitted} value={form.email} />
+        Form state status:
+        {(processing && <span>Processing</span>) ||
+          (error && <span>Error</span>) ||
+          (success && <span>Success</span>)}
+        <EmailInput onChange={this.handleChange} submitted={submitted} value={email} />
         <PasswordInput
           onChange={this.handleChange}
           submitted={submitted}
-          value={form.password}
+          value={password}
           name="password"
         />
         <PasswordInput
           onChange={this.handleChange}
           submitted={submitted}
-          value={form.repeatPassword}
+          value={repeatPassword}
           name="repeatPassword"
         />
+        <AgreeWithPoliciesCheckbox checked={agreeWithPolicies} />
       </RegisterForm>
     );
   }
 }
 
-export default connect()(RegisterUser);
+const mapStateToProps = state => {
+  const { processing, success, error } = state.userRegistration;
+
+  return { processing, success, error };
+};
+
+RegisterUser.defaultProps = {
+  processing: false,
+  error: null,
+  success: false
+};
+
+RegisterUser.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  processing: PropTypes.bool,
+  error: PropTypes.string,
+  success: PropTypes.bool
+};
+
+export default connect(mapStateToProps)(RegisterUser);
