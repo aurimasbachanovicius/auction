@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import AuthenticateUser from '../containers/AuthenticateUser';
 import Socials from '../components/Account/Socials';
-import RegistrateUser from '../containers/RegistrateUser';
+import RegisterUser from '../containers/RegisterUser';
 
 function AuthPage() {
   return (
@@ -22,7 +22,7 @@ function AuthPage() {
         <Grid item md={6}>
           <h3>Not a user yet? Register now!</h3>
           <br />
-          <RegistrateUser />
+          <RegisterUser />
         </Grid>
       </Grid>
     </React.Fragment>

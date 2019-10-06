@@ -4,7 +4,7 @@ import RegisterForm from '../components/Account/RegisterForm';
 import EmailInput from '../components/Account/EmailInput';
 import PasswordInput from '../components/Account/PasswordInput';
 
-class RegistrateUser extends React.Component {
+class RegisterUser extends React.Component {
   constructor(props) {
     super(props);
 
@@ -54,4 +54,4 @@ class RegistrateUser extends React.Component {
   }
 }
 
-export default connect()(RegistrateUser);
+export default connect()(RegisterUser);
