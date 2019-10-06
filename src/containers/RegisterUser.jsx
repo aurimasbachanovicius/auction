@@ -21,11 +21,20 @@ class RegisterUser extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePolicies = this.handlePolicies.bind(this);
   }
 
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
+  }
+
+  handlePolicies() {
+    const { agreeWithPolicies } = this.state;
+
+    this.setState({
+      agreeWithPolicies: !agreeWithPolicies
+    });
   }
 
   handleSubmit(e) {
@@ -61,7 +70,7 @@ class RegisterUser extends React.Component {
           value={repeatPassword}
           name="repeatPassword"
         />
-        <AgreeWithPoliciesCheckbox checked={agreeWithPolicies} />
+        <AgreeWithPoliciesCheckbox onChange={this.handlePolicies} checked={agreeWithPolicies} />
       </RegisterForm>
     );
   }
