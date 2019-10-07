@@ -17,7 +17,7 @@
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "0.0.75"
   },
-  "homepage": "https://3auris.github.com/auction",
+  "homepage": "https://mybid.lt",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
