@@ -1,0 +1,58 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm run build
+
+      - persist_to_workspace:
+          root: build
+          paths: html
+  deploy:
+    docker:
+      - image: node
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - attach_workspace:
+          at: build
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "ci-build@mybid.lt"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "9a:55:c4:d4:45:f9:99:da:e3:d8:08:c6:8c:cc:4d:99"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dist build
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
