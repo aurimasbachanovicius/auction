@@ -23,8 +23,8 @@ jobs:
       - run: npm run build
 
       - persist_to_workspace:
-          root: build
-          paths: html
+          root: ~/repo
+          paths: build
   deploy:
     docker:
       - image: node
@@ -41,7 +41,7 @@ jobs:
             git config user.name "ci-build"
       - add_ssh_keys:
           fingerprints:
-            - "9a:55:c4:d4:45:f9:99:da:e3:d8:08:c6:8c:cc:4d:99"
+            - '9a:55:c4:d4:45:f9:99:da:e3:d8:08:c6:8c:cc:4d:99'
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist build
