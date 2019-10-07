@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/auction/static/css/main.d8e445c8.chunk.css",
-    "main.js": "/auction/static/js/main.44dcf179.chunk.js",
-    "main.js.map": "/auction/static/js/main.44dcf179.chunk.js.map",
-    "runtime~main.js": "/auction/static/js/runtime~main.0154db06.js",
-    "runtime~main.js.map": "/auction/static/js/runtime~main.0154db06.js.map",
-    "static/css/2.f0a4c1aa.chunk.css": "/auction/static/css/2.f0a4c1aa.chunk.css",
-    "static/js/2.87e32ac2.chunk.js": "/auction/static/js/2.87e32ac2.chunk.js",
-    "static/js/2.87e32ac2.chunk.js.map": "/auction/static/js/2.87e32ac2.chunk.js.map",
-    "index.html": "/auction/index.html",
-    "precache-manifest.af30eded58adf2671f94f0c090fb7ee4.js": "/auction/precache-manifest.af30eded58adf2671f94f0c090fb7ee4.js",
-    "service-worker.js": "/auction/service-worker.js",
-    "static/css/2.f0a4c1aa.chunk.css.map": "/auction/static/css/2.f0a4c1aa.chunk.css.map",
-    "static/css/main.d8e445c8.chunk.css.map": "/auction/static/css/main.d8e445c8.chunk.css.map",
-    "static/media/index.css": "/auction/static/media/roboto-latin-900italic.ebf6d164.woff2"
+    "main.css": "/static/css/main.d8e445c8.chunk.css",
+    "main.js": "/static/js/main.e3b900d0.chunk.js",
+    "main.js.map": "/static/js/main.e3b900d0.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.8271af8e.chunk.css": "/static/css/2.8271af8e.chunk.css",
+    "static/js/2.87e32ac2.chunk.js": "/static/js/2.87e32ac2.chunk.js",
+    "static/js/2.87e32ac2.chunk.js.map": "/static/js/2.87e32ac2.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.2833c359e888af490f718d3967859be7.js": "/precache-manifest.2833c359e888af490f718d3967859be7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.8271af8e.chunk.css.map": "/static/css/2.8271af8e.chunk.css.map",
+    "static/css/main.d8e445c8.chunk.css.map": "/static/css/main.d8e445c8.chunk.css.map",
+    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2"
   }
 }
