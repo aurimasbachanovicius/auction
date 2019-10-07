@@ -23,15 +23,16 @@ jobs:
       - run: npm run build
 
       - persist_to_workspace:
-          root: ~/repo
+          root: .
           paths: build
   deploy:
     docker:
       - image: node
     working_directory: ~/repo
     steps:
+      - checkout
       - attach_workspace:
-          at: build
+          at: ~/repo
       - run:
           name: Install and configure dependencies
           command: |
