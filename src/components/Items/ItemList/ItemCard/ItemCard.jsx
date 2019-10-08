@@ -31,14 +31,15 @@ const useStyles = makeStyles({
 
 const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
   const classes = useStyles();
+  const src = Math.floor(Math.random() * 14);
 
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://i1.wp.com/thefrontline.org.uk/wp-content/uploads/2018/10/placeholder.jpg"
-          title="Contemplative Reptile"
+          image={require(`../../../../assets/items/${src}.png`)}
+          title="Technics placeholder"
         />
       </CardActionArea>
       <CardContent>

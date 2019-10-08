@@ -6,11 +6,12 @@ import ItemCard from './ItemCard/ItemCard';
 
 const ItemList = () => {
   const items = [];
-  for (let i = 0; i < 2; i += 1) {
+  for (let i = 0; i < 14; i += 1) {
     items.push(
-      <Box mt={4} key={i}>
-        <Grid container spacing={2}>
-          <Grid item md={3}>
+      <Grid item md={3} key={i}>
+        <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
+      </Grid>
+      /* <Grid item md={3}>
             <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
           </Grid>
           <Grid item md={3}>
@@ -18,19 +19,18 @@ const ItemList = () => {
           </Grid>
           <Grid item md={3}>
             <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
-          </Grid>
-          <Grid item md={3}>
-            <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
-          </Grid>
-        </Grid>
-      </Box>
+          </Grid> */
     );
   }
 
   return (
     <div>
       <Settings />
-      {items}
+      <Box mt={4}>
+        <Grid container direction="row" spacing={4}>
+          {items}
+        </Grid>
+      </Box>
     </div>
   );
 };
