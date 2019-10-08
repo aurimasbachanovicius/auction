@@ -8,18 +8,13 @@ const ItemList = () => {
   const items = [];
   for (let i = 0; i < 14; i += 1) {
     items.push(
-      <Grid item md={3} key={i}>
-        <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
+      <Grid item md={false} key={i}>
+        <ItemCard
+          timeUntilBidEnd={10000}
+          itemName="Naujas medvilninis džemperis, M dydis"
+          currentBid={10.15}
+        />
       </Grid>
-      /* <Grid item md={3}>
-            <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
-          </Grid>
-          <Grid item md={3}>
-            <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
-          </Grid>
-          <Grid item md={3}>
-            <ItemCard timeUntilBidEnd={10000} itemName="test" currentBid={10.15} />
-          </Grid> */
     );
   }
 
@@ -27,7 +22,7 @@ const ItemList = () => {
     <div>
       <Settings />
       <Box mt={4}>
-        <Grid container direction="row" spacing={4}>
+        <Grid container direction="row" spacing={3}>
           {items}
         </Grid>
       </Box>

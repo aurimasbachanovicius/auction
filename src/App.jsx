@@ -12,6 +12,12 @@ const theme = createMuiTheme({
     primary: { main: '#0B409C' }
   },
   overrides: {
+    MuiTypography: {
+      h4: {
+        fontSize: '1rem',
+        lineHeight: '1.5em'
+      }
+    },
     MuiAppBar: {
       root: {
         borderBottom: '1px solid #e4e4e4'

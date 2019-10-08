@@ -17,7 +17,7 @@ const SellNowButton = () => {
   return (
     <Link to={link}>
       <Button variant="contained" color="primary" size="medium" className={classes.margin}>
-        Parduoti
+        Parduoti dabar
       </Button>
     </Link>
   );

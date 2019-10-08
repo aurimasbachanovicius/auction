@@ -149,7 +149,7 @@ function MainNavigation() {
         <IconButton aria-label="Sell an item" color="inherit">
           <MailIcon />
         </IconButton>
-        <p>Parduoti</p>
+        <p>Parduoti dabar</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="Show new notifications" color="inherit">
