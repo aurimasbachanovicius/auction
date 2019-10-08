@@ -3,7 +3,6 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -17,6 +16,7 @@ import './MainNavigation.css';
 import Logo from '../../assets/logo/logo_transparent.png';
 import Search from './SearchBar/SearchBar';
 import ToolbarMenu from './UserMenu/UserMenu';
+import SellNowButton from './SellNowButton';
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -149,7 +149,7 @@ function MainNavigation() {
         <IconButton aria-label="Sell an item" color="inherit">
           <MailIcon />
         </IconButton>
-        <p>Sell Now</p>
+        <p>Parduoti</p>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="Show new notifications" color="inherit">
@@ -175,9 +175,7 @@ function MainNavigation() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <ToolbarMenu />
-            <Button variant="contained" color="primary" size="medium" className={classes.margin}>
-              Sell Now
-            </Button>
+            <SellNowButton />
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
