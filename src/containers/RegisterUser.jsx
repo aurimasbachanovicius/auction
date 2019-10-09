@@ -67,11 +67,7 @@ class RegisterUser extends React.Component {
 
     dispatch(userActions.register(email, password));
 
-    const { success } = this.props;
-
-    if (success) {
-      this.nextPage();
-    }
+    this.nextPage();
   }
 
   render() {
