@@ -1,15 +1,8 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MenuIcon from '@material-ui/icons/Menu';
 
 import { Link } from 'react-router-dom';
 import './MainNavigation.css';
@@ -19,38 +12,25 @@ import ToolbarMenu from './UserMenu/UserMenu';
 import SellNowButton from './SellNowButton';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
   margin: {
     margin: theme.spacing(1)
   },
-  grow: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    textTransform: 'none'
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block'
-    },
-    color: 'rgba(0, 0, 0, 0.54)'
-  },
   search: {
     position: 'relative',
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    marginBottom: theme.spacing(1),
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25)
     },
     width: '100%',
-    [theme.breakpoints.only('sm')]: {
-      marginLeft: theme.spacing(0),
-      width: '70%'
-    },
     [theme.breakpoints.up('md')]: {
-      marginLeft: theme.spacing(3),
-      width: '55%'
+      marginBottom: theme.spacing(0)
     }
   },
   searchIcon: {
@@ -61,6 +41,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  buttons: {
+    display: 'flex'
   },
   inputRoot: {
     color: 'inherit'
@@ -73,13 +56,13 @@ const useStyles = makeStyles(theme => ({
       width: 200
     }
   },
-  sectionDesktop: {
+  sectionOneRow: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex'
     }
   },
-  sectionMobile: {
+  sectionTwoRows: {
     display: 'flex',
     [theme.breakpoints.up('md')]: {
       display: 'none'
@@ -89,110 +72,49 @@ const useStyles = makeStyles(theme => ({
 
 function MainNavigation() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  function handleMobileMenuClose() {
-    setMobileMoreAnchorEl(null);
-  }
-
-  function handleMenuClose() {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  }
-
-  function handleMobileMenuOpen(event) {
-    setMobileMoreAnchorEl(event.currentTarget);
-  }
-
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
+  const logo = (
+    <Link to="/">
+      <img src={Logo} alt="logo" />
+    </Link>
   );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton
-          aria-label="New or current user"
-          aria-controls="primary-search-account-menu"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Login | Register</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="Sell an item" color="inherit">
-          <MailIcon />
-        </IconButton>
-        <p>Parduoti dabar</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="Show new notifications" color="inherit">
-          <Badge badgeContent={2} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-    </Menu>
+  const search = (
+    <div className={classes.search}>
+      <Search />
+    </div>
+  );
+
+  const buttons = (
+    <div className={classes.buttons}>
+      <ToolbarMenu />
+      <SellNowButton />
+    </div>
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" color="inherit">
-        <Toolbar>
-          <Link to="/">
-            <img src={Logo} alt="logo" />
-          </Link>
-          <div className={classes.search}>
-            <Search />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <ToolbarMenu />
-            <SellNowButton />
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="Show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+    <AppBar position="fixed" color="inherit">
+      <Toolbar className={classes.sectionOneRow}>
+        {logo}
+        {search}
+        {buttons}
+      </Toolbar>
+      <Toolbar className={classes.sectionTwoRows}>
+        <Grid container direction="row" justify="space-between" alignItems="center">
+          <Grid item md={4}>
+            {logo}
+          </Grid>
+          <Grid item md={8}>
+            {buttons}
+          </Grid>
+          <Grid container>
+            <Grid item md={12}>
+              {search}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Toolbar>
+    </AppBar>
   );
 }
 

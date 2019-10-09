@@ -11,6 +11,11 @@ const theme = createMuiTheme({
   palette: {
     primary: { main: '#0B409C' }
   },
+  breakpoints: {
+    values: {
+      md: 1060
+    }
+  },
   overrides: {
     MuiTypography: {
       h4: {
@@ -33,6 +38,9 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         textTransform: 'capitalize'
+      },
+      label: {
+        whiteSpace: 'nowrap'
       }
     },
     MuiIconButton: {

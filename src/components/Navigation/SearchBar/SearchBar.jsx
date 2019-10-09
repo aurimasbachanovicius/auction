@@ -6,14 +6,13 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import SettingsIcon from '@material-ui/icons/Settings';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 
 const categories = [
   {
     value: 'All',
-    label: 'All Categories'
+    label: 'Kategorijos'
   },
   {
     value: 'Computers',
@@ -31,13 +30,13 @@ const categories = [
 
 const useStyles = makeStyles(theme => ({
   root: {
-    marginLeft: theme.spacing(6),
     transition: 'box-shadow 200ms ease-in',
     border: '1px solid #DEDEDE',
     borderRadius: 4,
     height: 40,
     padding: '2px 4px',
     width: '100%',
+    minWidth: '500px',
     display: 'flex',
     alignItems: 'center',
     [theme.breakpoints.only('xs')]: {
@@ -105,13 +104,9 @@ function SearchBar() {
           ))}
         </TextField>
         <Divider className={classes.divider} />
-        <InputBase className={classes.input} placeholder="Search item..." />
-        <IconButton className={classes.iconButton} aria-label="Search" href="">
+        <InputBase className={classes.input} placeholder="Ieškoti prekės..." />
+        <IconButton className={classes.iconButton} aria-label="Paieška" href="">
           <SearchIcon />
-        </IconButton>
-        <Divider className={classes.divider} />
-        <IconButton className={classes.iconButton} aria-label="Directions" href="">
-          <SettingsIcon />
         </IconButton>
       </Grid>
     </Paper>
