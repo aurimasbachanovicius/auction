@@ -13,6 +13,7 @@ const theme = createMuiTheme({
   },
   breakpoints: {
     values: {
+      sm: 600,
       md: 1060
     }
   },
@@ -32,6 +33,12 @@ const theme = createMuiTheme({
       regular: {
         '@media (min-width: 600px)': {
           minHeight: '70px'
+        }
+      },
+      gutters: {
+        '@media (max-width: 600px)': {
+          paddingLeft: '0px',
+          paddingRight: '0px'
         }
       }
     },

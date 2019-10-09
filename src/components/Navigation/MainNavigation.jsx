@@ -20,8 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   search: {
     position: 'relative',
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
     marginBottom: theme.spacing(1),
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -43,7 +42,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   buttons: {
-    display: 'flex'
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.spacing(3)
+    }
   },
   inputRoot: {
     color: 'inherit'
@@ -64,6 +66,7 @@ const useStyles = makeStyles(theme => ({
   },
   sectionTwoRows: {
     display: 'flex',
+    marginLeft: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }
@@ -107,11 +110,7 @@ function MainNavigation() {
           <Grid item md={8}>
             {buttons}
           </Grid>
-          <Grid container>
-            <Grid item md={12}>
-              {search}
-            </Grid>
-          </Grid>
+          {search}
         </Grid>
       </Toolbar>
     </AppBar>
