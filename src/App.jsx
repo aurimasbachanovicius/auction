@@ -19,9 +19,17 @@ const theme = createMuiTheme({
   },
   overrides: {
     MuiTypography: {
+      body1: {
+        fontSize: '0.875rem'
+      },
       h4: {
         fontSize: '1rem',
         lineHeight: '1.5em'
+      }
+    },
+    MuiGrid: {
+      item: {
+        padding: '0px'
       }
     },
     MuiAppBar: {
@@ -53,6 +61,32 @@ const theme = createMuiTheme({
     MuiIconButton: {
       root: {
         color: 'inherit'
+      }
+    },
+    MuiListItemIcon: {
+      root: {
+        minWidth: '20px'
+      },
+      gutters: {
+        paddingRight: '0px'
+      }
+    },
+    MuiListItem: {
+      root: {
+        paddingTop: '0px',
+        paddingBottom: '0px'
+      }
+    },
+    MuiListItemText: {
+      root: {
+        marginTop: '0px',
+        marginBottom: '0px'
+      }
+    },
+    PrivateSwitchBase: {
+      root: {
+        paddingTop: '4px',
+        paddingBottom: '4px'
       }
     }
   },

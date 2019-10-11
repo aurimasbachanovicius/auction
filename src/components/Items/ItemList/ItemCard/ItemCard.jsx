@@ -19,7 +19,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 250,
     border: '1px solid #e4e4e4'
   },
   media: {
@@ -64,7 +63,7 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
           {itemName}
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          {`Aukciono dalyviai: ${currentBid}`}
+          {`Dalyviai: ${currentBid}`}
         </Typography>
         <Typography variant="body2" color="textSecondary">
           {`Likęs laikas: ${timeUntilBidEnd} h`}

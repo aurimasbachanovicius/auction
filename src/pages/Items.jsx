@@ -6,7 +6,7 @@ import AdvancedFilters from '../components/Items/AdvancedFilters/AdvancedFilters
 const ItemsPage = () => {
   return (
     <React.Fragment>
-      <Grid container spacing={4}>
+      <Grid container spacing={0}>
         <Grid item md={2}>
           <AdvancedFilters />
         </Grid>
