@@ -15,7 +15,7 @@ const Guest = () => {
   return (
     <Link to="/signup">
       <Button variant="outlined" color="primary" size="medium" className={classes.margin}>
-        Registruotis | Prisijungti
+        Prisijungti
       </Button>
     </Link>
   );

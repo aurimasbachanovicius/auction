@@ -36,17 +36,20 @@ const useStyles = makeStyles(theme => ({
     height: 40,
     padding: '2px 4px',
     width: '100%',
-    minWidth: '500px',
     display: 'flex',
     alignItems: 'center',
-    [theme.breakpoints.only('xs')]: {
-      marginLeft: theme.spacing(0)
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.spacing(3)
     }
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    marginTop: 3
+    marginTop: 3,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex'
+    }
   },
   menu: {
     width: 200
@@ -65,7 +68,11 @@ const useStyles = makeStyles(theme => ({
   divider: {
     width: 1,
     height: 28,
-    margin: 4
+    margin: 4,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex'
+    }
   }
 }));
 
