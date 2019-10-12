@@ -66,15 +66,16 @@ const theme = createMuiTheme({
     MuiListItemIcon: {
       root: {
         minWidth: '20px'
-      },
-      gutters: {
-        paddingRight: '0px'
       }
     },
     MuiListItem: {
       root: {
         paddingTop: '0px',
         paddingBottom: '0px'
+      },
+      gutters: {
+        paddingLeft: '0px',
+        paddingRight: '0px'
       }
     },
     MuiListItemText: {
@@ -87,6 +88,16 @@ const theme = createMuiTheme({
       root: {
         paddingTop: '4px',
         paddingBottom: '4px'
+      }
+    },
+    MuiSlider: {
+      root: {
+        color: 'rgba(0, 0, 0, 0.54)'
+      }
+    },
+    MuiInputBase: {
+      root: {
+        color: 'rgba(0, 0, 0, 0.54)'
       }
     }
   },
