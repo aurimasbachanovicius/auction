@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 
-const SimpleTextField = ({ submitted, name, value, label, onChange }) => (
+const SimpleTextField = ({ error, name, value, label, onChange }) => (
   <TextField
     variant="outlined"
     margin="normal"
@@ -15,16 +15,20 @@ const SimpleTextField = ({ submitted, name, value, label, onChange }) => (
     autoComplete={name}
     autoFocus
     onChange={onChange}
-    error={submitted && !value}
-    helperText={submitted && !value && 'Privalomas laukas'}
+    error={error !== null}
+    helperText={error}
   />
 );
+
+SimpleTextField.defaultProps = {
+  error: null
+};
 
 SimpleTextField.propTypes = {
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  submitted: PropTypes.bool.isRequired,
+  error: PropTypes.string,
   onChange: PropTypes.func.isRequired
 };
 

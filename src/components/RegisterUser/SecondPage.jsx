@@ -8,7 +8,7 @@ class SecondPage extends React.Component {
     super(props);
 
     this.state = {
-      submitted: false
+      errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,33 +17,42 @@ class SecondPage extends React.Component {
   validate() {
     const { name, surname } = this.props;
 
-    return name !== '' && surname !== '';
+    const errors = {};
+    if (name.length < 1) {
+      errors.name = 'Tuščias laukas negali būti paliktas.';
+    }
+
+    if (surname.length < 1) {
+      errors.surname = 'Tuščias laukas negali būti paliktas.';
+    }
+
+    this.setState({ errors });
+
+    return Object.keys(errors).length === 0;
   }
 
   handleSubmit(e) {
     const { onSubmit } = this.props;
-
-    this.setState({ submitted: true });
 
     return this.validate() ? onSubmit(e) : () => {};
   }
 
   render() {
     const { onChange, name, surname, previousPage } = this.props;
-    const { submitted } = this.state;
+    const { errors } = this.state;
 
     return (
       <div>
         <SimpleTextField
           onChange={onChange}
           label="Vardas"
-          submitted={submitted}
+          error={errors.name}
           name="name"
           value={name}
         />
         <SimpleTextField
           onChange={onChange}
-          submitted={submitted}
+          error={errors.surname}
           label="Pavardė"
           name="surname"
           value={surname}
