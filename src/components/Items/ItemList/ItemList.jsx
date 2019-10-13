@@ -6,6 +6,12 @@ import Settings from '../Settings/Settings';
 import ItemCard from './ItemCard/ItemCard';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    paddingLeft: theme.spacing(0),
+    '@media (min-width: 1060px)': {
+      paddingLeft: theme.spacing(3)
+    }
+  },
   container: {
     display: 'flex',
     flexWrap: 'wrap'
@@ -14,16 +20,16 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     minWidth: '100px',
     maxWidth: '100%',
-    '@media (min-width: 400px)': {
+    '@media (min-width: 450px)': {
       maxWidth: '50%'
     },
-    '@media (min-width: 650px)': {
+    '@media (min-width: 750px)': {
       maxWidth: '33%'
     },
-    '@media (min-width: 900px)': {
+    '@media (min-width: 1200px)': {
       maxWidth: '25%'
     },
-    '@media (min-width: 1350px)': {
+    '@media (min-width: 1550px)': {
       maxWidth: '20%'
     }
   }
@@ -45,10 +51,10 @@ const ItemList = () => {
   }
 
   return (
-    <div>
+    <div className={classes.root}>
       <Settings />
       <Box mt={4}>
-        <Grid container direction="row" spacing={1} className={classes.container}>
+        <Grid container direction="row" spacing={2} className={classes.container}>
           {items}
         </Grid>
       </Box>

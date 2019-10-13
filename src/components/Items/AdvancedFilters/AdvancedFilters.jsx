@@ -10,11 +10,12 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   formControl: {
-    marginTop: theme.spacing(3),
+    paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(2),
     width: '100%',
     minWidth: 120,
-    borderBottom: '1px solid #e4e4e4'
+    borderBottom: '1px solid #e4e4e4',
+    borderRight: '1px solid #e4e4e4'
   }
 }));
 

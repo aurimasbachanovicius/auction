@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    width: '90%',
     paddingBottom: theme.spacing(1)
   },
   slider: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(1)
   },
   textField: {
-    width: 70
+    width: 60
   }
 }));
 
