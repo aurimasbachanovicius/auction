@@ -2,7 +2,7 @@ import TextField from '@material-ui/core/TextField';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PasswordInput = ({ submitted, value, name, onChange }) => (
+const PasswordInput = ({ error, value, name, onChange }) => (
   <TextField
     variant="outlined"
     margin="normal"
@@ -15,16 +15,20 @@ const PasswordInput = ({ submitted, value, name, onChange }) => (
     id="password"
     autoComplete="current-password"
     onChange={onChange}
-    error={submitted && !value}
-    helperText={submitted && !value && 'Privalomas laukas'}
+    error={error !== null}
+    helperText={error}
   />
 );
+
+PasswordInput.defaultProps = {
+  error: null
+};
 
 PasswordInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  submitted: PropTypes.bool.isRequired
+  error: PropTypes.string
 };
 
 export default PasswordInput;

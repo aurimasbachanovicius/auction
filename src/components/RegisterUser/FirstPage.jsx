@@ -3,13 +3,14 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import EmailInput from '../Account/EmailInput';
 import PasswordInput from '../Account/PasswordInput';
+import isEmailValid from '../../services/emailValidator';
 
 class FirstPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      submitted: false
+      errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,28 +19,46 @@ class FirstPage extends React.Component {
   validate() {
     const { password, repeatPassword, email } = this.props;
 
-    return password !== '' && repeatPassword !== '' && email !== '';
+    const errors = {};
+    if (isEmailValid(email) === false) {
+      errors.email = 'Neteisingas el. pašto adresas';
+    }
+
+    if (password.length < 12) {
+      errors.password = 'Slaptažodis turi susidaryti bent iš 12-os simbolių.';
+    }
+
+    if (repeatPassword !== password) {
+      errors.repeatPassword = 'Slaptažodis pakartotas blogai.';
+    }
+
+    this.setState({ errors });
+
+    return Object.keys(errors).length === 0;
   }
 
   handleSubmit(e) {
     const { onSubmit } = this.props;
-
-    this.setState({ submitted: true });
 
     return this.validate() ? onSubmit(e) : () => {};
   }
 
   render() {
     const { onChange, password, repeatPassword, email } = this.props;
-    const { submitted } = this.state;
+    const { errors } = this.state;
 
     return (
       <React.Fragment>
-        <EmailInput onChange={onChange} submitted={submitted} value={email} />
-        <PasswordInput onChange={onChange} submitted={submitted} value={password} name="password" />
+        <EmailInput onChange={onChange} error={errors.email} value={email} />
         <PasswordInput
           onChange={onChange}
-          submitted={submitted}
+          error={errors.password}
+          value={password}
+          name="password"
+        />
+        <PasswordInput
+          onChange={onChange}
+          error={errors.repeatPassword}
           value={repeatPassword}
           name="repeatPassword"
         />
