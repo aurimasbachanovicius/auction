@@ -1,13 +1,13 @@
 import { loginActions, registerActions } from '../actions/user.actions';
 
-export const userAuthentication = (state = {}, action) => {
+export const userAuthentication = (state = { loggedIn: false }, action) => {
   switch (action.type) {
     case loginActions.REQUEST:
-      return { loggingIn: true };
+      return { loggingIn: true, loggedIn: false };
     case loginActions.SUCCESS:
       return { loggedIn: true };
     case loginActions.ERROR:
-      return { error: action.error };
+      return { error: action.error, loggedIn: false };
     default:
       return state;
   }

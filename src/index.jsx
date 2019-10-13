@@ -8,8 +8,13 @@ import 'typeface-roboto';
 
 import './index.css';
 import App from './App';
+import { loadState, saveState } from './storage/localStorage';
 
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+const persistedState = loadState();
+const store = createStore(rootReducer, persistedState, applyMiddleware(thunkMiddleware));
+
+// @todo do not persist everything.
+store.subscribe(() => saveState(store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>
