@@ -31,8 +31,12 @@ const PriceRange = () => {
     setValue(newValue);
   };
 
-  const handleInputChange = event => {
+  const handleInputChange = (event, newValue) => {
+    // console.log(value);
+    // console.log(event.target);
+    // setValue(newValue);
     setValue(event.target.value === '' ? '' : Number(event.target.value));
+    console.log(value);
   };
 
   const handleBlur = () => {
@@ -66,6 +70,7 @@ const PriceRange = () => {
             variant="outlined"
             onChange={handleInputChange}
             onBlur={handleBlur}
+            type="number"
             inputProps={{
               step: 10,
               min: 0,
@@ -84,6 +89,7 @@ const PriceRange = () => {
             variant="outlined"
             onChange={handleInputChange}
             onBlur={handleBlur}
+            type="number"
             inputProps={{
               step: 10,
               min: 0,
