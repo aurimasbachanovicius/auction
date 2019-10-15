@@ -1,15 +1,27 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ItemsPage from './pages/Items';
 import AuthPage from './pages/Auth';
 import NotFoundPage from './pages/NotFound';
 import Sell from './pages/Sell';
+import isUserAuthenticated from './services/user';
+
+const GuestRoute = ({ children }) => {
+  return <>{isUserAuthenticated() ? <Redirect to="/" /> : children}</>;
+};
+
+GuestRoute.propTypes = {
+  children: PropTypes.node.isRequired
+};
 
 const Routes = () => (
   <Switch>
     <Route path="/" component={ItemsPage} exact />
-    <Route path="/signup" component={AuthPage} exact />
     <Route path="/sell" component={Sell} exact />
+    <GuestRoute>
+      <Route path="/signup" component={AuthPage} exact />
+    </GuestRoute>
     <Route component={NotFoundPage} />
   </Switch>
 );

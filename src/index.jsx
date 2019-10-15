@@ -1,24 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
-import rootReducer from './reducers';
 import 'typeface-roboto';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './storage/store';
 
 import './index.css';
 import App from './App';
-import { loadState, saveState } from './storage/localStorage';
-
-const persistedState = loadState();
-const store = createStore(rootReducer, persistedState, applyMiddleware(thunkMiddleware));
-
-// @todo do not persist everything.
-store.subscribe(() => saveState(store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );

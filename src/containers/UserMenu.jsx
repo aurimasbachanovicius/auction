@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LoggedIn from './LoggedIn';
-import Guest from './Guest';
+import LoggedIn from '../components/Navigation/UserMenu/LoggedIn';
+import Guest from '../components/Navigation/UserMenu/Guest';
 
 const UserMenu = ({ loggedIn }) => {
   return loggedIn ? <LoggedIn /> : <Guest />;

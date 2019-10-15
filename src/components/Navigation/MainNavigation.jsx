@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import './MainNavigation.css';
 import Logo from '../../assets/logo/logo_transparent.png';
 import Search from './SearchBar/SearchBar';
-import ToolbarMenu from './UserMenu/UserMenu';
+import ToolbarMenu from '../../containers/UserMenu';
 import SellNowButton from './SellNowButton';
 
 const useStyles = makeStyles(theme => ({
