@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ItemList from '../components/Item/ItemList/ItemList';
+import ItemList from 'components/Item/ItemList/ItemList';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import AdvancedFilters from '../components/Item/AdvancedFilters/AdvancedFilters';
+import AdvancedFilters from 'components/Item/AdvancedFilters/AdvancedFilters';
 
 const useStyles = makeStyles(theme => ({
   advancedFilters: {

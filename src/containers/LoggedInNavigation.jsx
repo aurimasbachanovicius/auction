@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { userActions } from '../actions';
-import LoggedIn from '../components/Navigation/UserMenu/LoggedIn';
+import { userActions } from 'actions';
+import LoggedIn from 'components/Navigation/UserMenu/LoggedIn';
 
 const mapDispatchToProps = dispatch => ({
   onLogout: () => {

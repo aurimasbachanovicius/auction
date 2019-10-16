@@ -2,8 +2,8 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import SortingModeSelect from './SortingModeSelect/SortingModeSelect';
-import ViewTypeSelect from './ViewTypeSelect/ViewTypeSelect';
+import SortingModeSelect from 'components/Item/Settings/SortingModeSelect';
+import ViewTypeSelect from 'components/Item/Settings/ViewTypeSelect';
 
 const useStyles = makeStyles(theme => ({
   formControl: {

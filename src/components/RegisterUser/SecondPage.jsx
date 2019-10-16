@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import SimpleTextField from '../Account/SimpleTextField';
+import SimpleTextField from 'components/Account/SimpleTextField';
 
 class SecondPage extends React.Component {
   constructor(props) {

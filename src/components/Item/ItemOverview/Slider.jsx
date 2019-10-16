@@ -37,7 +37,7 @@ const ItemFullDescription = () => {
     <div className={classes.root}>
       <img
         className={classes.img}
-        src={require(`../../../../assets/items/${randomNumber}.png`)}
+        src={require(`../../../assets/items/${randomNumber}.png`)}
         alt="Clothes placeholder"
       />
       <MobileStepper

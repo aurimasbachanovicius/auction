@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
-import EmailInput from '../Account/EmailInput';
-import PasswordInput from '../Account/PasswordInput';
-import isEmailValid from '../../services/emailValidator';
+import EmailInput from 'components/Account/EmailInput';
+import PasswordInput from 'components/Account/PasswordInput';
+import isEmailValid from 'services/emailValidator';
 
 class FirstPage extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ItemOverview from '../components/Item/ItemOverview/ItemOverview';
+import ItemOverview from 'components/Item/ItemOverview/ItemOverview';
 
 const ItemsPage = () => {
   return (

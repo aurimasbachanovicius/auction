@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SecondPage from './SecondPage';
-import FirstPage from './FirstPage';
+import SecondPage from 'components/RegisterUser/SecondPage';
+import FirstPage from 'components/RegisterUser/FirstPage';
 
 class WizardForm extends Component {
   constructor(props) {

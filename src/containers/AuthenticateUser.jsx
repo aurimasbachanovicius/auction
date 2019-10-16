@@ -2,12 +2,12 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { userActions } from '../actions/user.actions';
-import LoginForm from '../components/Account/LoginForm';
-import EmailInput from '../components/Account/EmailInput';
-import PasswordInput from '../components/Account/PasswordInput';
-import RememberMeCheckbox from '../components/Account/RememberMeCheckbox';
-import LoginButton from '../components/Account/LoginButton';
+import { userActions } from 'actions/user.actions';
+import LoginForm from 'components/Account/LoginForm';
+import EmailInput from 'components/Account/EmailInput';
+import PasswordInput from 'components/Account/PasswordInput';
+import RememberMeCheckbox from 'components/Account/RememberMeCheckbox';
+import LoginButton from 'components/Account/LoginButton';
 
 class AuthenticateUser extends React.Component {
   constructor(props) {

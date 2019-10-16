@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import AuthenticateUser from '../containers/AuthenticateUser';
-import Socials from '../components/Account/Socials';
-import RegisterUser from '../containers/RegisterUser';
+import AuthenticateUser from 'containers/AuthenticateUser';
+import Socials from 'components/Account/Socials';
+import RegisterUser from 'containers/RegisterUser';
 
 function AuthPage() {
   return (

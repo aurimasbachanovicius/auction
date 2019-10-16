@@ -15,6 +15,13 @@
     },
     "ecmaVersion": 2018
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
   "plugins": ["react", "prettier"],
   "rules": {
     "no-use-before-define": 0,

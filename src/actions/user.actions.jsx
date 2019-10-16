@@ -1,4 +1,4 @@
-import userValidator from '../services/userValidator';
+import userValidator from 'services/userValidator';
 
 export const loginActions = {
   REQUEST: 'USER_LOGIN_REQUEST',

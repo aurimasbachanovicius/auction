@@ -1,4 +1,4 @@
-import { loginActions, registerActions } from '../actions/user.actions';
+import { loginActions, registerActions } from 'actions/user.actions';
 
 export const userAuthentication = (state = { loggedIn: false }, action) => {
   switch (action.type) {

@@ -1,4 +1,4 @@
-import { store } from '../storage/store';
+import { store } from 'storage/store';
 
 function isUserAuthenticated() {
   const { loggedIn } = store.getState().userAuthentication;

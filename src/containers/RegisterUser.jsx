@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import WizardForm from '../components/RegisterUser/WizardForm';
-import { userActions } from '../actions/user.actions';
+import WizardForm from 'components/RegisterUser/WizardForm';
+import { userActions } from 'actions/user.actions';
 
 class RegisterUser extends React.Component {
   constructor(props) {

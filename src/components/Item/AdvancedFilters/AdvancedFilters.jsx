@@ -2,8 +2,8 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import Categories from './Categories';
-import PriceRange from './PriceRange';
+import Categories from 'components/Item/AdvancedFilters/Categories';
+import PriceRange from 'components/Item/AdvancedFilters/PriceRange';
 
 const useStyles = makeStyles(theme => ({
   formControl: {

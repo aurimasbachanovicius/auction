@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Grid } from '@material-ui/core';
-import AddAuctionItem from '../containers/AddAuctionItem';
+import AddAuctionItem from 'containers/AddAuctionItem';
 
 const Sell = () => {
   // @todo use context, unhardcode.

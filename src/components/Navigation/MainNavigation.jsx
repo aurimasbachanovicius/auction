@@ -5,11 +5,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import { Link } from 'react-router-dom';
-import './MainNavigation.css';
-import Logo from '../../assets/logo/logo_transparent.png';
-import Search from './SearchBar/SearchBar';
-import ToolbarMenu from '../../containers/UserMenu';
-import SellNowButton from './SellNowButton';
+import 'components/Navigation/MainNavigation.css';
+import Logo from 'assets/logo/logo_transparent.png';
+import Search from 'components/Navigation/SearchBar';
+import ToolbarMenu from 'containers/UserMenu';
+import SellNowButton from 'components/Navigation/SellNowButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
