@@ -9,7 +9,7 @@ function AuthPage() {
     <React.Fragment>
       <Grid container spacing={4}>
         <Grid item md={6}>
-          Connect to use per socials:
+          Prisijungti per soc. tinklus:
         </Grid>
         <Grid item md={6}>
           <Socials />
