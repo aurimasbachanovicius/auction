@@ -53,7 +53,7 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={require(`../../../../assets/items/${randomNumber}.png`)}
+            image={require(`../../../assets/items/${randomNumber}.png`)}
             title="Clothes placeholder"
           />
         </CardActionArea>

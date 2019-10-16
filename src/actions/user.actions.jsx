@@ -3,13 +3,19 @@ import userValidator from '../services/userValidator';
 export const loginActions = {
   REQUEST: 'USER_LOGIN_REQUEST',
   SUCCESS: 'USER_LOGIN_SUCCESS',
-  ERROR: 'USER_LOGIN_ERROR'
+  ERROR: 'USER_LOGIN_ERROR',
+
+  LOGOUT: 'USER_LOGOUT'
 };
 
 export const registerActions = {
   REQUEST: 'USER_REGISTER_REQUEST',
   SUCCESS: 'USER_REGISTER_SUCCESS',
   ERROR: 'USER_REGISTER_ERROR'
+};
+
+const logout = () => {
+  return { type: loginActions.LOGOUT };
 };
 
 const login = (email, password) => {
@@ -46,4 +52,4 @@ const register = (email, password) => {
   };
 };
 
-export const userActions = { login, register };
+export const userActions = { login, register, logout };

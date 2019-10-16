@@ -8,6 +8,8 @@ export const userAuthentication = (state = { loggedIn: false }, action) => {
       return { loggedIn: true };
     case loginActions.ERROR:
       return { error: action.error, loggedIn: false };
+    case loginActions.LOGOUT:
+      return { loggedIn: false };
     default:
       return state;
   }

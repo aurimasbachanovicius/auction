@@ -19,24 +19,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-// function valueText(value) {
-//   return `${value}`;
-// }
-
 const PriceRange = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState([20, 37]);
 
-  const handleSliderChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const handleSliderChange = (event, newValue) => setValue(newValue);
 
-  const handleInputChange = (event, newValue) => {
-    // console.log(value);
-    // console.log(event.target);
-    // setValue(newValue);
+  const handleInputChange = event => {
     setValue(event.target.value === '' ? '' : Number(event.target.value));
-    console.log(value);
   };
 
   const handleBlur = () => {
@@ -80,7 +70,7 @@ const PriceRange = () => {
             }}
           />
         </Grid>
-        <Grid item xs={2}></Grid>
+        <Grid item xs={2} />
         <Grid item xs={5}>
           <TextField
             className={classes.textField}

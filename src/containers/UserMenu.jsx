@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LoggedIn from '../components/Navigation/UserMenu/LoggedIn';
 import Guest from '../components/Navigation/UserMenu/Guest';
+import LoggedInNavigation from './LoggedInNavigation';
 
 const UserMenu = ({ loggedIn }) => {
-  return loggedIn ? <LoggedIn /> : <Guest />;
+  return loggedIn ? <LoggedInNavigation /> : <Guest />;
 };
 
 UserMenu.propTypes = {
