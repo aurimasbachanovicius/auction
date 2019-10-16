@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
@@ -44,15 +45,19 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
   const classes = useStyles();
   const randomNumber = Math.floor(Math.random() * 14);
 
+  const link = 'item';
+
   return (
     <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={require(`../../../../assets/items/${randomNumber}.png`)}
-          title="Clothes placeholder"
-        />
-      </CardActionArea>
+      <Link to={link}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={require(`../../../../assets/items/${randomNumber}.png`)}
+            title="Clothes placeholder"
+          />
+        </CardActionArea>
+      </Link>
       <CardContent>
         <Typography
           className={classes.itemDescriptionBold}

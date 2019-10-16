@@ -1,11 +1,11 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ItemList from '../components/Items/ItemList/ItemList';
+import ItemList from '../components/Item/ItemList/ItemList';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import AdvancedFilters from '../components/Items/AdvancedFilters/AdvancedFilters';
+import AdvancedFilters from '../components/Item/AdvancedFilters/AdvancedFilters';
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  advancedFilters: {
     right: 'auto',
     left: 0,
     position: 'fixed',
@@ -20,7 +20,7 @@ const ItemsPage = () => {
   return (
     <React.Fragment>
       <Grid container spacing={0} justify="flex-end">
-        <Grid item md={2} className={classes.root}>
+        <Grid item md={2} className={classes.advancedFilters}>
           <AdvancedFilters />
         </Grid>
         <Grid item md={10}>
