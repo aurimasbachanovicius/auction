@@ -2,16 +2,10 @@ import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Settings from 'components/Item/Settings/Settings';
+// import Settings from 'components/Item/Settings/Settings';
 import ItemCard from 'components/Item/ItemList/ItemCard';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    paddingLeft: theme.spacing(0),
-    '@media (min-width: 1060px)': {
-      paddingLeft: theme.spacing(3)
-    }
-  },
   container: {
     display: 'flex',
     flexWrap: 'wrap'
@@ -20,16 +14,16 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     minWidth: '100px',
     maxWidth: '100%',
-    '@media (min-width: 450px)': {
+    '@media (min-width: 520px)': {
       maxWidth: '50%'
     },
-    '@media (min-width: 750px)': {
+    '@media (min-width: 840px)': {
       maxWidth: '33%'
     },
-    '@media (min-width: 1200px)': {
+    '@media (min-width: 1300px)': {
       maxWidth: '25%'
     },
-    '@media (min-width: 1550px)': {
+    '@media (min-width: 1610px)': {
       maxWidth: '20%'
     }
   }
@@ -42,23 +36,23 @@ const ItemList = () => {
     items.push(
       <Grid item md={false} key={i} className={classes.item}>
         <ItemCard
-          timeUntilBidEnd={10000}
+          timeUntilBidEnd={999}
           itemName="Naujas medvilninis džemperis, M dydis"
-          currentBid={10.15}
+          currentBid={9999.99}
         />
       </Grid>
     );
   }
 
   return (
-    <div className={classes.root}>
-      <Settings />
+    <React.Fragment>
+      {/* <Settings /> */}
       <Box mt={4}>
-        <Grid container direction="row" spacing={2} className={classes.container}>
+        <Grid container direction="row" spacing={3} className={classes.container}>
           {items}
         </Grid>
       </Box>
-    </div>
+    </React.Fragment>
   );
 };
 

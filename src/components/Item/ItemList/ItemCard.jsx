@@ -25,13 +25,13 @@ const useStyles = makeStyles({
   media: {
     height: 0,
     width: '100%',
-    paddingTop: '100%' // 1:1
+    paddingTop: '100%', // 1:1
+    marginBottom: '.625rem'
   },
   itemDescriptionBold: {
-    marginTop: '.625rem',
-    marginBottom: '.75rem',
     fontWeight: 400,
-    textAlign: 'left'
+    textAlign: 'left',
+    paddingRight: 0
   },
   itemFavorite: {
     color: '#999',
@@ -67,12 +67,6 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
         >
           {itemName}
         </Typography>
-        <Typography variant="body2" color="textSecondary">
-          {`Dalyviai: ${currentBid}`}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          {`Likęs laikas: ${timeUntilBidEnd} h`}
-        </Typography>
       </CardContent>
       {/* <CardActions>
         <FormControl fullWidth>
@@ -93,14 +87,12 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
       </CardActions> */}
       <Grid container direction="row" justify="space-between" alignItems="center">
         <CardContent>
-          <Typography
-            className={classes.itemDescriptionBold}
-            gutterBottom
-            variant="h4"
-            component="h4"
-          >
+          <Typography className={classes.itemDescriptionBold} variant="h4" component="h4">
             {`${currentBid} €`}
           </Typography>
+        </CardContent>
+        <CardContent>
+          <Typography color="textSecondary">{`${timeUntilBidEnd} h`}</Typography>
         </CardContent>
         <CardActions disableSpacing>
           <IconButton className={classes.itemFavorite} aria-label="add to favorites">

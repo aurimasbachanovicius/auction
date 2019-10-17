@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
@@ -33,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     transition: 'box-shadow 200ms ease-in',
     border: '1px solid #DEDEDE',
     borderRadius: 4,
-    height: 40,
+    height: 37,
     padding: '2px 4px',
     width: '100%',
     display: 'flex',
@@ -64,15 +63,6 @@ const useStyles = makeStyles(theme => ({
   },
   iconButton: {
     padding: 6
-  },
-  divider: {
-    width: 1,
-    height: 28,
-    margin: 4,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'flex'
-    }
   }
 }));
 
@@ -110,7 +100,6 @@ function SearchBar() {
             </MenuItem>
           ))}
         </TextField>
-        <Divider className={classes.divider} />
         <InputBase className={classes.input} placeholder="Ieškoti prekės..." />
         <IconButton className={classes.iconButton} aria-label="Paieška" href="">
           <SearchIcon />
