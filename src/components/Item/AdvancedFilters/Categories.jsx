@@ -9,8 +9,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingLeft: '2rem',
-    paddingRight: theme.spacing(1)
+    padding: '0 2rem'
   }
 }));
 

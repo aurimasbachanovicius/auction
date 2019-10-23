@@ -14,16 +14,22 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     minWidth: '100px',
     maxWidth: '100%',
-    '@media (min-width: 520px)': {
+    '@media (min-width: 420px)': {
       maxWidth: '50%'
     },
-    '@media (min-width: 840px)': {
+    '@media (min-width: 710px)': {
       maxWidth: '33%'
     },
-    '@media (min-width: 1200px)': {
+    '@media (min-width: 770px)': {
+      maxWidth: '50%'
+    },
+    '@media (min-width: 960px)': {
+      maxWidth: '33%'
+    },
+    '@media (min-width: 1300px)': {
       maxWidth: '25%'
     },
-    '@media (min-width: 1450px)': {
+    '@media (min-width: 1550px)': {
       maxWidth: '20%'
     }
   }
@@ -48,7 +54,7 @@ const ItemList = () => {
     <React.Fragment>
       {/* <Settings /> */}
       <Box mt={4}>
-        <Grid container direction="row" spacing={3} className={classes.container}>
+        <Grid container direction="row" spacing={2} className={classes.container}>
           {items}
         </Grid>
       </Box>

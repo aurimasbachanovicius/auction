@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
   search: {
     position: 'relative',
     marginRight: theme.spacing(1),
-    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
@@ -29,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      marginBottom: theme.spacing(0)
+      marginBottom: theme.spacing(1)
     }
   },
   searchIcon: {

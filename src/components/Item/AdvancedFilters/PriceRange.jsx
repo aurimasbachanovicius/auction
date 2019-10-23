@@ -5,8 +5,7 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingLeft: '2rem',
-    paddingRight: theme.spacing(1),
+    padding: '0 2rem',
     paddingBottom: theme.spacing(1)
   },
   slider: {
@@ -32,7 +31,6 @@ const PriceRange = () => {
       <Slider
         className={classes.slider}
         value={value}
-        color="secondary"
         onChange={handleSliderChange}
         valueLabelDisplay="on"
         aria-labelledby="range-slider"

@@ -9,7 +9,42 @@ const useStyles = makeStyles(theme => ({
     right: 'auto',
     left: 0,
     position: 'fixed',
-    height: '100%'
+    height: '100%',
+    display: 'none',
+    '@media (min-width: 770px)': {
+      display: 'flex',
+      maxWidth: '30%'
+    },
+    '@media (min-width: 960px)': {
+      maxWidth: '26%'
+    },
+    '@media (min-width: 1100px)': {
+      maxWidth: '24%'
+    },
+    '@media (min-width: 1200px)': {
+      maxWidth: '20%'
+    },
+    '@media (min-width: 1450px)': {
+      maxWidth: '18%'
+    }
+  },
+  itemList: {
+    maxWidth: '100%',
+    '@media (min-width: 770px)': {
+      maxWidth: '70%'
+    },
+    '@media (min-width: 960px)': {
+      maxWidth: '74%'
+    },
+    '@media (min-width: 1100px)': {
+      maxWidth: '76%'
+    },
+    '@media (min-width: 1200px)': {
+      maxWidth: '80%'
+    },
+    '@media (min-width: 1450px)': {
+      maxWidth: '82%'
+    }
   }
 }));
 
@@ -19,10 +54,10 @@ const ItemsPage = () => {
   return (
     <React.Fragment>
       <Grid container spacing={0} justify="flex-end">
-        <Grid item md={2} className={classes.advancedFilters}>
+        <Grid item className={classes.advancedFilters}>
           <AdvancedFilters />
         </Grid>
-        <Grid item md={10}>
+        <Grid item className={classes.itemList}>
           <ItemList />
         </Grid>
       </Grid>

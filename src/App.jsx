@@ -81,6 +81,11 @@ const theme = createMuiTheme({
         color: 'inherit'
       }
     },
+    MuiInputBase: {
+      input: {
+        padding: '5px 0 7px'
+      }
+    },
     MuiListItemIcon: {
       root: {
         minWidth: '20px'
@@ -88,8 +93,7 @@ const theme = createMuiTheme({
     },
     MuiListItem: {
       root: {
-        paddingTop: '0px',
-        paddingBottom: '0px'
+        paddingTop: '0px'
       },
       button: {
         '&:hover': {
