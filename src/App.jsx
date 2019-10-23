@@ -52,8 +52,26 @@ const theme = createMuiTheme({
     },
     MuiButton: {
       root: {
-        textTransform: 'capitalize'
+        textTransform: 'capitalize',
+        '&:hover': {
+          backgroundColor: 'inherit',
+          border: 'default'
+        }
       },
+      // outlinedPrimary: {
+      //   '&:hover': {
+      //     backgroundColor: 'inherit',
+      //     border: 'default'
+      //   }
+      // },
+      // ListItem: {
+      //   Text: {
+      //     '&:hover': {
+      //       backgroundColor: 'inherit',
+      //       border: 'default'
+      //     }
+      //   }
+      // },
       label: {
         whiteSpace: 'nowrap'
       }
@@ -72,6 +90,11 @@ const theme = createMuiTheme({
       root: {
         paddingTop: '0px',
         paddingBottom: '0px'
+      },
+      button: {
+        '&:hover': {
+          backgroundColor: 'white'
+        }
       },
       gutters: {
         paddingLeft: '0px',

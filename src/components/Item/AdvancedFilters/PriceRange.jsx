@@ -1,9 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(1)
   },
   slider: {
-    paddingTop: theme.spacing(7),
+    paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(1)
   },
   textField: {
@@ -22,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 
 const PriceRange = () => {
   const classes = useStyles();
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([20, 72]);
 
   const handleSliderChange = (event, newValue) => setValue(newValue);
 

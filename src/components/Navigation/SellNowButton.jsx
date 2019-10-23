@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  margin: {
+  button: {
     margin: theme.spacing(1)
+    // '&:hover': {
+    //   backgroundColor: 'primary'
+    // }
   }
 }));
 
@@ -16,7 +19,7 @@ const SellNowButton = () => {
 
   return (
     <Link to={link}>
-      <Button variant="contained" color="primary" size="medium" className={classes.margin}>
+      <Button variant="contained" color="primary" size="medium" className={classes.button}>
         Parduoti
       </Button>
     </Link>

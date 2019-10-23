@@ -46,10 +46,10 @@ const Categories = () => {
                 <Checkbox
                   edge="start"
                   checked={checked.indexOf(value) !== -1}
+                  color="primary"
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
-                  color="default"
                 />
               </ListItemIcon>
               <ListItemText id={labelId} primary={`${value}`} />

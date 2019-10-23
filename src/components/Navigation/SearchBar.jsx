@@ -31,8 +31,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     transition: 'box-shadow 200ms ease-in',
     border: '1px solid #DEDEDE',
-    borderRadius: 4,
-    height: 37,
+    backgroundColor: '#f2f2f2',
+    borderRadius: 20,
+    height: 40,
     padding: '2px 4px',
     width: '100%',
     display: 'flex',

@@ -30,8 +30,6 @@ const LoggedIn = ({ onLogout }) => {
         <Button
           aria-controls="simple-menu"
           aria-haspopup="true"
-          variant="outlined"
-          color="primary"
           size="medium"
           className={classes.margin}
           onClick={handleClick}

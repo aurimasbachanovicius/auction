@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
-  margin: {
+  button: {
     margin: theme.spacing(1)
   }
 }));
@@ -14,7 +14,7 @@ const Guest = () => {
 
   return (
     <Link to="/signup">
-      <Button variant="outlined" color="primary" size="medium" className={classes.margin}>
+      <Button size="medium" className={classes.button}>
         Prisijungti
       </Button>
     </Link>
