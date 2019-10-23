@@ -90,15 +90,15 @@ const theme = createMuiTheme({
         paddingBottom: '4px'
       }
     },
-    MuiSlider: {
-      root: {
-        color: 'rgba(0, 0, 0, 0.54)'
+    MuiCardActionArea: {
+      focusHighlight: {
+        display: 'none'
       }
-    },
-    MuiInputBase: {
-      root: {
-        color: 'rgba(0, 0, 0, 0.54)'
-      }
+    }
+  },
+  props: {
+    MuiButtonBase: {
+      disableRipple: true
     }
   },
   shadows: Array(25).fill('none')

@@ -7,7 +7,6 @@ import PriceRange from 'components/Item/AdvancedFilters/PriceRange';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingLeft: '2rem',
     paddingRight: theme.spacing(1)
   },
   formControl: {

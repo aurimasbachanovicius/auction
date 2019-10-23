@@ -7,11 +7,12 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '90%',
+    paddingLeft: '2rem',
+    paddingRight: theme.spacing(1),
     paddingBottom: theme.spacing(1)
   },
   slider: {
-    paddingTop: theme.spacing(2),
+    paddingTop: theme.spacing(7),
     paddingBottom: theme.spacing(1)
   },
   textField: {
@@ -25,71 +26,19 @@ const PriceRange = () => {
 
   const handleSliderChange = (event, newValue) => setValue(newValue);
 
-  const handleInputChange = event => {
-    setValue(event.target.value === '' ? '' : Number(event.target.value));
-  };
-
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
-
   return (
     <div className={classes.root}>
       <Typography gutterBottom variant="h4" component="h4">
         Kaina
       </Typography>
-      <Grid container>
-        <Grid item xs={12}>
-          <Slider
-            className={classes.slider}
-            value={value}
-            onChange={handleSliderChange}
-            valueLabelDisplay="auto"
-            aria-labelledby="range-slider"
-          />
-        </Grid>
-        <Grid item xs={5}>
-          <TextField
-            className={classes.textField}
-            value={value[0]}
-            margin="dense"
-            variant="outlined"
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            type="number"
-            inputProps={{
-              step: 10,
-              min: 0,
-              max: 100,
-              type: 'number',
-              'aria-labelledby': 'input-slider'
-            }}
-          />
-        </Grid>
-        <Grid item xs={2} />
-        <Grid item xs={5}>
-          <TextField
-            className={classes.textField}
-            value={value[1]}
-            margin="dense"
-            variant="outlined"
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            type="number"
-            inputProps={{
-              step: 10,
-              min: 0,
-              max: 100,
-              type: 'number',
-              'aria-labelledby': 'input-slider'
-            }}
-          />
-        </Grid>
-      </Grid>
+      <Slider
+        className={classes.slider}
+        value={value}
+        color="secondary"
+        onChange={handleSliderChange}
+        valueLabelDisplay="on"
+        aria-labelledby="range-slider"
+      />
     </div>
   );
 };

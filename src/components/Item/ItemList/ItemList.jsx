@@ -20,10 +20,10 @@ const useStyles = makeStyles(theme => ({
     '@media (min-width: 840px)': {
       maxWidth: '33%'
     },
-    '@media (min-width: 1300px)': {
+    '@media (min-width: 1200px)': {
       maxWidth: '25%'
     },
-    '@media (min-width: 1610px)': {
+    '@media (min-width: 1450px)': {
       maxWidth: '20%'
     }
   }

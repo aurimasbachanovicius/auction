@@ -21,15 +21,23 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles({
   card: {
     border: '1px solid #e4e4e4'
+    // '&:hover': {
+    //   boxShadow: '0 15px 35px rgba(50,50,93,.03), 0 5px 15px rgba(0,0,0,.01)'
+    // }
   },
   media: {
     height: 0,
     width: '100%',
-    paddingTop: '100%', // 1:1
-    marginBottom: '.625rem'
+    paddingTop: '100%' // 1:1
   },
-  itemDescriptionBold: {
+  itemTitle: {
+    marginTop: '.625rem',
     fontWeight: 400,
+    textAlign: 'left',
+    paddingRight: 0
+  },
+  itemPrice: {
+    fontWeight: 500,
     textAlign: 'left',
     paddingRight: 0
   },
@@ -58,16 +66,13 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
           />
         </CardActionArea>
       </Link>
+
       <CardContent>
-        <Typography
-          className={classes.itemDescriptionBold}
-          gutterBottom
-          variant="h4"
-          component="h4"
-        >
-          {itemName}
+        <Typography className={classes.itemTitle} gutterBottom variant="h4" component="h4">
+          <Link to={link}>{itemName}</Link>
         </Typography>
       </CardContent>
+
       {/* <CardActions>
         <FormControl fullWidth>
           <Grid container spacing={2}>
@@ -87,12 +92,10 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
       </CardActions> */}
       <Grid container direction="row" justify="space-between" alignItems="center">
         <CardContent>
-          <Typography className={classes.itemDescriptionBold} variant="h4" component="h4">
+          <Typography className={classes.itemPrice} variant="h4" component="h4">
             {`${currentBid} €`}
           </Typography>
-        </CardContent>
-        <CardContent>
-          <Typography color="textSecondary">{`${timeUntilBidEnd} h`}</Typography>
+          <Typography>{`${timeUntilBidEnd} h`}</Typography>
         </CardContent>
         <CardActions disableSpacing>
           <IconButton className={classes.itemFavorite} aria-label="add to favorites">

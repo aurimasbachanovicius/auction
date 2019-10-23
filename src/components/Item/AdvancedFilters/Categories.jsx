@@ -1,4 +1,5 @@
 import React from 'react';
+import makeStyles from '@material-ui/core/styles/makeStyles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -6,7 +7,15 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    paddingLeft: '2rem',
+    paddingRight: theme.spacing(1)
+  }
+}));
+
 const Categories = () => {
+  const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = value => () => {
@@ -23,7 +32,7 @@ const Categories = () => {
   };
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Typography gutterBottom variant="h4" component="h4">
         Kategorijos
       </Typography>
@@ -43,12 +52,12 @@ const Categories = () => {
                   color="default"
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} secondary={`${value}`} />
+              <ListItemText id={labelId} primary={`${value}`} />
             </ListItem>
           );
         })}
       </List>
-    </React.Fragment>
+    </div>
   );
 };
 
