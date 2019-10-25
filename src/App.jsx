@@ -58,20 +58,6 @@ const theme = createMuiTheme({
           border: 'default'
         }
       },
-      // outlinedPrimary: {
-      //   '&:hover': {
-      //     backgroundColor: 'inherit',
-      //     border: 'default'
-      //   }
-      // },
-      // ListItem: {
-      //   Text: {
-      //     '&:hover': {
-      //       backgroundColor: 'inherit',
-      //       border: 'default'
-      //     }
-      //   }
-      // },
       label: {
         whiteSpace: 'nowrap'
       }
