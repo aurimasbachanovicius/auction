@@ -1,0 +1,23 @@
+.slick-slide {
+  height: auto;
+  padding-bottom: 70px;
+}
+
+.slick-slide img {
+  height: auto;
+  max-height: 500px;
+}
+
+.slick-thumb li {
+  height: 70px;
+  width: 70px;
+}
+
+.slick-thumb img {
+  height: 70px;
+  width: 70px;
+}
+
+.slick-track {
+  width: 600px;
+}

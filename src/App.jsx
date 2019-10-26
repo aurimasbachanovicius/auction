@@ -83,7 +83,8 @@ const theme = createMuiTheme({
       },
       button: {
         '&:hover': {
-          backgroundColor: 'white'
+          backgroundColor: 'white',
+          textDecoration: 'underline'
         }
       },
       gutters: {

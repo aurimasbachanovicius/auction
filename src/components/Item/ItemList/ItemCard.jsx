@@ -12,18 +12,12 @@ import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-// import { PanTool } from '@material-ui/icons';
-// import FormControl from '@material-ui/core/FormControl';
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-// import Grid from '@material-ui/core/Grid';
-
 const useStyles = makeStyles({
   card: {
-    border: '1px solid #e4e4e4'
-    // '&:hover': {
-    //   boxShadow: '0 15px 35px rgba(50,50,93,.03), 0 5px 15px rgba(0,0,0,.01)'
-    // }
+    border: '1px solid #e4e4e4',
+    '&:hover': {
+      boxShadow: '0 15px 35px rgba(50,50,93,.07), 0 5px 15px rgba(0,0,0,.03)'
+    }
   },
   media: {
     height: 0,
@@ -62,7 +56,7 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
           <CardMedia
             className={classes.media}
             image={require(`../../../assets/items/${randomNumber}.png`)}
-            title="Clothes placeholder"
+            title={itemName}
           />
         </CardActionArea>
       </Link>
@@ -72,24 +66,6 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
           <Link to={link}>{itemName}</Link>
         </Typography>
       </CardContent>
-
-      {/* <CardActions>
-        <FormControl fullWidth>
-          <Grid container spacing={2}>
-            <Grid item md={8}>
-              <TextField fullWidth id="your-bid" variant="outlined" label="Your bid" />
-            </Grid>
-            <Grid item md={4}>
-              <Box mt={0.5}>
-                <Button color="primary" fullWidth variant="contained" size="large">
-                  <Box mr={2} component={PanTool} />
-                  Bid
-                </Button>
-              </Box>
-            </Grid>
-          </Grid>
-        </FormControl>
-      </CardActions> */}
       <Grid container direction="row" justify="space-between" alignItems="center">
         <CardContent>
           <Typography className={classes.itemPrice} variant="h4" component="h4">
