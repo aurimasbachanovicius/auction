@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.fba7c609.chunk.css",
-    "main.js": "/static/js/main.b0ab24c4.chunk.js",
-    "main.js.map": "/static/js/main.b0ab24c4.chunk.js.map",
+    "main.css": "/static/css/main.baaa7617.chunk.css",
+    "main.js": "/static/js/main.367d0b9b.chunk.js",
+    "main.js.map": "/static/js/main.367d0b9b.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.cedc61c5.chunk.css": "/static/css/2.cedc61c5.chunk.css",
-    "static/js/2.5276030e.chunk.js": "/static/js/2.5276030e.chunk.js",
-    "static/js/2.5276030e.chunk.js.map": "/static/js/2.5276030e.chunk.js.map",
+    "static/css/2.8271af8e.chunk.css": "/static/css/2.8271af8e.chunk.css",
+    "static/js/2.b34383b7.chunk.js": "/static/js/2.b34383b7.chunk.js",
+    "static/js/2.b34383b7.chunk.js.map": "/static/js/2.b34383b7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.426b039db9b82e71f7035ea951a81bca.js": "/precache-manifest.426b039db9b82e71f7035ea951a81bca.js",
+    "precache-manifest.98dab7e179f41619302b9915625cee7f.js": "/precache-manifest.98dab7e179f41619302b9915625cee7f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.cedc61c5.chunk.css.map": "/static/css/2.cedc61c5.chunk.css.map",
-    "static/css/main.fba7c609.chunk.css.map": "/static/css/main.fba7c609.chunk.css.map",
+    "static/css/2.8271af8e.chunk.css.map": "/static/css/2.8271af8e.chunk.css.map",
+    "static/css/main.baaa7617.chunk.css.map": "/static/css/main.baaa7617.chunk.css.map",
     "static/media/0.png": "/static/media/0.6771bafe.png",
     "static/media/1.png": "/static/media/1.835cd44d.png",
     "static/media/10.png": "/static/media/10.e6de9e8c.png",
@@ -28,7 +28,6 @@
     "static/media/7.png": "/static/media/7.d82c0b4b.png",
     "static/media/8.png": "/static/media/8.7a747abe.png",
     "static/media/9.png": "/static/media/9.e5a3cd2c.png",
-    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2",
-    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg"
+    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2"
   }
 }
