@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
@@ -10,29 +9,29 @@ import SwipeableViews from 'react-swipeable-views';
 const imageSteps = [
   {
     label: 'Naujas medvilninis džemperis, M dydis',
-    imgPath: '1'
+    imgPath: '0'
   },
   {
     label: 'Naujas medvilninis džemperis, M dydis 1',
-    imgPath: '2'
+    imgPath: '1'
   },
   {
     label: 'Naujas medvilninis džemperis, M dydis 2',
-    imgPath: '3'
+    imgPath: '2'
   },
   {
     label: 'Naujas medvilninis džemperis, M dydis 3',
-    imgPath: '4'
+    imgPath: '3'
   },
   {
     label: 'Naujas medvilninis džemperis, M dydis 4',
-    imgPath: '5'
+    imgPath: '4'
   }
 ];
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 400,
+    maxWidth: '100%',
     flexGrow: 1,
     marginTop: 50
   },
@@ -52,7 +51,11 @@ const useStyles = makeStyles(theme => ({
     display: 'block',
     maxWidth: 400,
     overflow: 'hidden',
-    width: '100%'
+    width: '100%',
+    paddingBottom: '10px'
+  },
+  thumbnail: {
+    padding: '0 4px'
   }
 }));
 
@@ -68,6 +71,10 @@ function ImageSlider() {
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
+  };
+
+  const handleSwitch = index => {
+    setActiveStep(index);
   };
 
   const handleStepChange = step => {
@@ -126,65 +133,25 @@ function ImageSlider() {
           </Button>
         </Grid>
       </Grid>
-      {/* <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft fontSize="large" />
-            ) : (
-              <KeyboardArrowRight fontSize="large" />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight fontSize="large" />
-            ) : (
-              <KeyboardArrowLeft fontSize="large" />
-            )}
-          </Button>
-        }
-      /> */}
+      <Grid container spacing={0} justify="center" alignItems="center">
+        {imageSteps.map((step, index) => (
+          <div key={step.label}>
+            <Grid item xs={3}>
+              <Button className={classes.thumbnail} onClick={() => handleSwitch(index)}>
+                {Math.abs(activeStep - index) <= 4 ? (
+                  <img
+                    src={require(`assets/items/${step.imgPath}.png`)}
+                    alt={step.label}
+                    style={{ height: '80px' }}
+                  />
+                ) : null}
+              </Button>
+            </Grid>
+          </div>
+        ))}
+      </Grid>
     </div>
   );
 }
 
 export default ImageSlider;
-
-// import React from 'react';
-// import Carousel from './Carousel';
-// import images from './images.json';
-
-// function ImageSlider() {
-//   return <Carousel imageUrls={images} />;
-// }
-
-// export default ImageSlider;
-
-/* <MobileStepper
-  steps={maxSteps}
-  position="static"
-  activeStep={activeStep}
-  nextButton={
-    <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-      {theme.direction === 'rtl' ? (
-        <KeyboardArrowLeft fontSize="large" />
-      ) : (
-        <KeyboardArrowRight fontSize="large" />
-      )}
-    </Button>
-  }
-  backButton={
-    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-      {theme.direction === 'rtl' ? (
-        <KeyboardArrowRight fontSize="large" />
-      ) : (
-        <KeyboardArrowLeft fontSize="large" />
-      )}
-    </Button>
-  }
-/>; */
