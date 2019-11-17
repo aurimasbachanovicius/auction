@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   buttons: {
     display: 'flex',
     [theme.breakpoints.up('md')]: {
-      marginLeft: theme.spacing(3)
+      marginLeft: theme.spacing(5)
     }
   },
   inputRoot: {

@@ -31,13 +31,39 @@ const imageSteps = [
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: '100%',
+    maxWidth: 420,
     flexGrow: 1,
-    marginTop: 50
+    marginTop: 30,
+    position: 'relative',
+    marginRight: theme.spacing(3)
   },
   arrowButton: {
     padding: '50px 0',
     minWidth: 30
+  },
+  arrowButtonLeft: {
+    position: 'absolute',
+    color: '#fff',
+    opacity: '80%',
+    padding: '30px 0',
+    left: 0,
+    '&:hover': {
+      color: 'black',
+      backgroundColor: '#fff',
+      opacity: '20%'
+    }
+  },
+  arrowButtonRight: {
+    position: 'absolute',
+    color: '#fff',
+    opacity: '80%',
+    padding: '30px 0',
+    right: 0,
+    '&:hover': {
+      color: 'black',
+      backgroundColor: '#fff',
+      opacity: '20%'
+    }
   },
   header: {
     display: 'flex',
@@ -49,13 +75,18 @@ const useStyles = makeStyles(theme => ({
   img: {
     height: 'auto',
     display: 'block',
-    maxWidth: 400,
     overflow: 'hidden',
     width: '100%',
-    paddingBottom: '10px'
+    maxWidth: 420,
+    marginBottom: '10px',
+    borderRadius: 4
   },
   thumbnail: {
     padding: '0 4px'
+  },
+  thumbnailImg: {
+    borderRadius: 4,
+    height: 74
   }
 }));
 
@@ -84,54 +115,48 @@ function ImageSlider() {
   return (
     <div className={classes.root}>
       <Grid container spacing={0} justify="center" alignItems="center">
-        <Grid item xs={1}>
-          <Button
-            className={classes.arrowButton}
-            size="small"
-            onClick={handleBack}
-            disabled={activeStep === 0}
-          >
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight fontSize="large" />
-            ) : (
-              <KeyboardArrowLeft fontSize="large" />
-            )}
-          </Button>
-        </Grid>
-        <Grid item xs={10}>
-          <SwipeableViews
-            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-            index={activeStep}
-            onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
-            {imageSteps.map((step, index) => (
-              <div key={step.label}>
-                {Math.abs(activeStep - index) <= 2 ? (
-                  <img
-                    className={classes.img}
-                    src={require(`assets/items/${step.imgPath}.png`)}
-                    alt={step.label}
-                  />
-                ) : null}
-              </div>
-            ))}
-          </SwipeableViews>
-        </Grid>
-        <Grid item xs={1}>
-          <Button
-            className={classes.arrowButton}
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft fontSize="large" />
-            ) : (
-              <KeyboardArrowRight fontSize="large" />
-            )}
-          </Button>
-        </Grid>
+        <SwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+        >
+          {imageSteps.map((step, index) => (
+            <div key={step.label}>
+              {Math.abs(activeStep - index) <= 2 ? (
+                <img
+                  className={classes.img}
+                  src={require(`assets/items/${step.imgPath}.png`)}
+                  alt={step.label}
+                />
+              ) : null}
+            </div>
+          ))}
+        </SwipeableViews>
+        <Button
+          className={(classes.arrowButton, classes.arrowButtonLeft)}
+          size="large"
+          onClick={handleBack}
+          disabled={activeStep === 0}
+        >
+          {theme.direction === 'rtl' ? (
+            <KeyboardArrowRight fontSize="large" />
+          ) : (
+            <KeyboardArrowLeft fontSize="large" />
+          )}
+        </Button>
+        <Button
+          className={(classes.arrowButton, classes.arrowButtonRight)}
+          size="large"
+          onClick={handleNext}
+          disabled={activeStep === maxSteps - 1}
+        >
+          {theme.direction === 'rtl' ? (
+            <KeyboardArrowLeft fontSize="large" />
+          ) : (
+            <KeyboardArrowRight fontSize="large" />
+          )}
+        </Button>
       </Grid>
       <Grid container spacing={0} justify="center" alignItems="center">
         {imageSteps.map((step, index) => (
@@ -142,7 +167,7 @@ function ImageSlider() {
                   <img
                     src={require(`assets/items/${step.imgPath}.png`)}
                     alt={step.label}
-                    style={{ height: '80px' }}
+                    className={classes.thumbnailImg}
                   />
                 ) : null}
               </Button>

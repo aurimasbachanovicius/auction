@@ -31,15 +31,15 @@ const useStyles = makeStyles(theme => ({
   root: {
     transition: 'box-shadow 200ms ease-in',
     border: '1px solid #DEDEDE',
-    backgroundColor: '#f2f2f2',
-    borderRadius: 20,
-    height: 40,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 19,
+    height: 42,
     padding: '2px 4px',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     [theme.breakpoints.up('md')]: {
-      marginLeft: theme.spacing(3)
+      marginLeft: theme.spacing(4)
     }
   },
   textField: {
@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   iconButton: {
-    padding: 6
+    padding: 8
   }
 }));
 

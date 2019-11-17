@@ -69,7 +69,13 @@ const theme = createMuiTheme({
     },
     MuiInputBase: {
       input: {
-        padding: '5px 0 7px'
+        padding: '7px 0'
+      }
+    },
+    MuiOutlinedInput: {
+      input: {
+        paddingTop: 10,
+        paddingBottom: 10
       }
     },
     MuiListItemIcon: {

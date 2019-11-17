@@ -1,16 +1,19 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import ImageSlider from 'components/Item/ItemOverview/ImageSlider';
+import ImageCarousel from 'components/Item/ItemInfo/ImageCarousel';
+import ItemDescription from 'components/Item/ItemInfo/ItemDescription';
 
 const ItemsPage = () => {
   return (
     <React.Fragment>
       <Grid container spacing={0} justify="center">
         <Grid item md={4}>
-          <ImageSlider />
+          <ImageCarousel />
         </Grid>
-        <Grid item md={4}></Grid>
-        <Grid item md={4}></Grid>
+        <Grid item md={6}>
+          <ItemDescription />
+        </Grid>
+        <Grid item md={2}></Grid>
       </Grid>
     </React.Fragment>
   );

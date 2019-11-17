@@ -62,7 +62,7 @@ const ItemCard = ({ currentBid, itemName, timeUntilBidEnd }) => {
       </Link>
 
       <CardContent>
-        <Typography className={classes.itemTitle} gutterBottom variant="h4" component="h4">
+        <Typography className={classes.itemTitle} variant="h4" component="h4">
           <Link to={link}>{itemName}</Link>
         </Typography>
       </CardContent>

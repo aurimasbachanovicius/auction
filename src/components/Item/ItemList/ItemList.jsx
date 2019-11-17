@@ -51,8 +51,7 @@ const ItemList = () => {
 
   return (
     <React.Fragment>
-      {/* <Settings /> */}
-      <Box mt={4}>
+      <Box mt={3}>
         <Grid container direction="row" spacing={2} className={classes.container}>
           {items}
         </Grid>
