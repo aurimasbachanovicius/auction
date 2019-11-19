@@ -38,11 +38,6 @@ const theme = createMuiTheme({
       }
     },
     MuiToolbar: {
-      regular: {
-        '@media (min-width: 600px)': {
-          minHeight: '70px'
-        }
-      },
       gutters: {
         '@media (max-width: 600px)': {
           paddingLeft: '0px',
@@ -74,8 +69,8 @@ const theme = createMuiTheme({
     },
     MuiOutlinedInput: {
       input: {
-        paddingTop: 10,
-        paddingBottom: 10
+        paddingTop: 8.5,
+        paddingBottom: 8.5
       }
     },
     MuiListItemIcon: {

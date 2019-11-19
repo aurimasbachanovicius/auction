@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,8 +25,21 @@ const useStyles = makeStyles(theme => ({
   itemPrice: {
     fontWeight: 500
   },
-  textField: {
-    maxWidth: 120
+  priceInputField: {
+    maxWidth: 120,
+    backgroundColor: '#fff'
+  },
+  button: {
+    marginLeft: theme.spacing(1)
+  },
+  infoArea: {
+    paddingBottom: theme.spacing(2)
+  },
+  biddingField: {
+    backgroundColor: '#f4f4f4',
+    borderRadius: 4,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   }
 }));
 
@@ -45,75 +58,82 @@ function ItemDescription() {
       <Typography className={classes.itemTitle} variant="h5" component="h3">
         Naujas medvilninis džemperis, M dydis
       </Typography>
-      <Grid container spacing={2}>
-        <Grid item md={3}>
-          <Typography className={classes.lightText} display="inline" component="p">
-            Aprašymas:
-          </Typography>
+      <div className={classes.infoArea}>
+        <Grid container spacing={2}>
+          <Grid item md={3}>
+            <Typography className={classes.lightText} display="inline" component="p">
+              Aprašymas:
+            </Typography>
+          </Grid>
+          <Grid item md={9}>
+            <Typography display="inline" component="p">
+              Parduodu džemperį M dydžio, moteriškas. Atsiimti galite Vilniuje, su aukciono
+              laimėtoju susisieksiu asmeniškai per el. paštą, susitarti dėl atsiėmimo. Į kitus
+              miestus nesiunčiu.
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid item md={9}>
-          <Typography display="inline" component="p">
-            Parduodu džemperį M dydžio, moteriškas. Atsiimti galite Vilniuje, su aukciono laimėtoju
-            susisieksiu asmeniškai per el. paštą, susitarti dėl atsiėmimo. Į kitus miestus
-            nesiunčiu.
-          </Typography>
+        <Grid container spacing={2}>
+          <Grid item md={3}>
+            <Typography className={classes.lightText} display="inline" component="p">
+              Būklė:
+            </Typography>
+          </Grid>
+          <Grid item md={9}>
+            <Typography display="inline" component="p">
+              Naujas
+            </Typography>
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item md={3}>
-          <Typography className={classes.lightText} display="inline" component="p">
-            Būklė:
-          </Typography>
+        <Grid container spacing={2}>
+          <Grid item md={3}>
+            <Typography className={classes.lightText} display="inline" component="p">
+              Liko laiko:
+            </Typography>
+          </Grid>
+          <Grid item md={9}>
+            <Typography display="inline" component="p">
+              1 d 15 h
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid item md={9}>
-          <Typography display="inline" component="p">
-            Naujas
-          </Typography>
+      </div>
+      <div className={classes.biddingField}>
+        <Grid container spacing={2}>
+          <Grid item md={3}>
+            <Typography className={classes.lightText} display="inline" component="p">
+              Dabartinė kaina:
+            </Typography>
+          </Grid>
+          <Grid item md={9}>
+            <Typography className={classes.itemPrice} display="inline" variant="h4" component="h4">
+              15.50 €
+            </Typography>
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item md={3}>
-          <Typography className={classes.lightText} display="inline" component="p">
-            Liko laiko:
-          </Typography>
+        <Grid container spacing={2}>
+          <Grid item md={3}></Grid>
+          <Grid item md={9}>
+            <FormControl variant="outlined">
+              <OutlinedInput
+                id="outlined-adornment-amount"
+                className={classes.priceInputField}
+                value={values.amount}
+                onChange={handleChange('amount')}
+                endAdornment={<InputAdornment position="end">€</InputAdornment>}
+                aria-describedby="outlined-amount"
+                inputProps={{
+                  'aria-label': 'amount'
+                }}
+                labelWidth={0}
+              />
+            </FormControl>
+            <Button variant="contained" color="primary" size="medium" className={classes.button}>
+              Siūlyti kainą
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item md={9}>
-          <Typography display="inline" component="p">
-            999 h
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item md={3}>
-          <Typography className={classes.lightText} display="inline" component="p">
-            Dabartinė kaina:
-          </Typography>
-        </Grid>
-        <Grid item md={9}>
-          <Typography className={classes.itemPrice} display="inline" variant="h4" component="h4">
-            9999.99 €
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item md={3}></Grid>
-        <Grid item md={9}>
-          <FormControl variant="outlined">
-            <OutlinedInput
-              id="outlined-adornment-amount"
-              className={classes.textField}
-              value={values.amount}
-              onChange={handleChange('amount')}
-              endAdornment={<InputAdornment position="end">€</InputAdornment>}
-              aria-describedby="outlined-amount"
-              inputProps={{
-                'aria-label': 'amount'
-              }}
-              labelWidth={0}
-            />
-          </FormControl>
-        </Grid>
-      </Grid>
+      </div>
     </Paper>
   );
 }

@@ -10,10 +10,10 @@ const ItemsPage = () => {
         <Grid item md={4}>
           <ImageCarousel />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={5}>
           <ItemDescription />
         </Grid>
-        <Grid item md={2}></Grid>
+        <Grid item md={3}></Grid>
       </Grid>
     </React.Fragment>
   );

@@ -30,10 +30,9 @@ const categories = [
 const useStyles = makeStyles(theme => ({
   root: {
     transition: 'box-shadow 200ms ease-in',
-    border: '1px solid #DEDEDE',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#f4f4f4',
     borderRadius: 19,
-    height: 42,
+    height: 40,
     padding: '2px 4px',
     width: '100%',
     display: 'flex',
