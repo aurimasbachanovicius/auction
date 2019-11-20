@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 40,
+    marginLeft: theme.spacing(3),
     marginRight: theme.spacing(3)
   },
   itemTitle: {
@@ -26,20 +27,24 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 500
   },
   priceInputField: {
-    maxWidth: 120,
-    backgroundColor: '#fff'
+    maxWidth: 120
   },
   button: {
     marginLeft: theme.spacing(1)
   },
   infoArea: {
+    paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2)
   },
   biddingField: {
-    backgroundColor: '#f4f4f4',
+    border: '1px solid #e4e4e4',
     borderRadius: 4,
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3)
+  },
+  container: {
+    paddingTop: 3,
+    paddingBottom: 3
   }
 }));
 
@@ -59,7 +64,7 @@ function ItemDescription() {
         Naujas medvilninis džemperis, M dydis
       </Typography>
       <div className={classes.infoArea}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={classes.container}>
           <Grid item md={3}>
             <Typography className={classes.lightText} display="inline" component="p">
               Aprašymas:
@@ -73,7 +78,7 @@ function ItemDescription() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={classes.container}>
           <Grid item md={3}>
             <Typography className={classes.lightText} display="inline" component="p">
               Būklė:
@@ -85,7 +90,7 @@ function ItemDescription() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={classes.container}>
           <Grid item md={3}>
             <Typography className={classes.lightText} display="inline" component="p">
               Liko laiko:
@@ -99,7 +104,7 @@ function ItemDescription() {
         </Grid>
       </div>
       <div className={classes.biddingField}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={classes.container}>
           <Grid item md={3}>
             <Typography className={classes.lightText} display="inline" component="p">
               Dabartinė kaina:
@@ -111,7 +116,7 @@ function ItemDescription() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={classes.container}>
           <Grid item md={3}></Grid>
           <Grid item md={9}>
             <FormControl variant="outlined">
@@ -134,6 +139,37 @@ function ItemDescription() {
           </Grid>
         </Grid>
       </div>
+      {/* <div className={classes.infoArea}>
+        <Grid container spacing={2} className={classes.container}>
+          <Grid item md={3}>
+            <Typography className={classes.lightText} display="inline" component="p">
+              Pristatymas:
+            </Typography>
+          </Grid>
+          <Grid item md={9}>
+            <Typography display="inline" component="p">
+              Atsiėmimas asmeniškai <br /> Siuntimas paštu
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} className={classes.container}>
+          <Grid item md={3}>
+            <Typography className={classes.lightText} display="inline" component="p">
+              Pardavėjas:
+            </Typography>
+          </Grid>
+          <Grid item md={9}>
+            <Typography display="inline" component="p">
+              Agne123
+            </Typography>
+            <Typography display="inline" component="p">
+              <a href="/#">
+                <b>&nbsp;[susisiekti su pardavėju]</b>
+              </a>
+            </Typography>
+          </Grid>
+        </Grid>
+      </div> */}
     </Paper>
   );
 }

@@ -11,12 +11,6 @@ const theme = createMuiTheme({
   palette: {
     primary: { main: '#0B409C' }
   },
-  breakpoints: {
-    values: {
-      sm: 600,
-      md: 1060
-    }
-  },
   overrides: {
     MuiTypography: {
       body1: {
