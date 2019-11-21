@@ -41,6 +41,7 @@ const theme = createMuiTheme({
     },
     MuiButton: {
       root: {
+        color: 'inherit',
         textTransform: 'capitalize',
         '&:hover': {
           backgroundColor: 'inherit',
