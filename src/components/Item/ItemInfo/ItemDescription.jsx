@@ -173,6 +173,7 @@ function ItemDescription() {
           <Grid item md={5}>
             <Box display="inline" component="p">
               <img
+                alt="Google maps placeholder"
                 className={classes.img}
                 src={require(`assets/temp/google-maps-placeholder.png`)}
               />
