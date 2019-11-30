@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 750,
     flexGrow: 1,
-    marginTop: 30,
+    marginTop: 26,
     position: 'relative',
     marginRight: theme.spacing(5)
   },

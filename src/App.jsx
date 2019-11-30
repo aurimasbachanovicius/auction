@@ -100,6 +100,18 @@ const theme = createMuiTheme({
         paddingBottom: '4px'
       }
     },
+    PrivateValueLabel: {
+      label: {
+        color: '#484848'
+      },
+      circle: {
+        height: 42,
+        backgroundColor: 'transparent'
+      },
+      offset: {
+        fontSize: '0.85rem'
+      }
+    },
     MuiCardActionArea: {
       focusHighlight: {
         display: 'none'

@@ -14,7 +14,10 @@ import PersonIcon from '@material-ui/icons/Person';
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 26,
-    marginRight: theme.spacing(8)
+    marginRight: theme.spacing(8),
+    padding: 30,
+    border: '1px solid #e4e4e4',
+    borderRadius: 4
   },
   fieldDescriptor: {
     float: 'right'
@@ -46,11 +49,7 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(6),
     borderTop: '1px solid #e4e4e4'
   },
-  contactLeftCol: {
-    paddingTop: theme.spacing(3)
-  },
   img: {
-    paddingTop: theme.spacing(3),
     width: '100%',
     height: '100%',
     borderRadius: 4
@@ -129,16 +128,23 @@ function ItemDescription() {
         susisieksiu asmeniškai per el. paštą, susitarti dėl atsiėmimo. Į kitus miestus nesiunčiu.
       </Typography>
       <div className={classes.contactField}>
-        <Typography className={classes.boldText} display="inline" variant="h4" component="h4">
-          Pardavėjas
-        </Typography>
         <Grid container spacing={2} className={classes.container}>
-          <Grid item md={7}>
+          <Grid item md={6}>
             <Grid container className={classes.contactLeftCol}>
-              <Grid item xs={12} style={{ marginBottom: 15 }}>
+              <Grid item xs={12} style={{ marginBottom: 30 }}>
+                <Typography
+                  className={classes.boldText}
+                  display="inline"
+                  variant="h4"
+                  component="h4"
+                >
+                  Pardavėjas
+                </Typography>
+              </Grid>
+              <Grid item xs={12} style={{ marginBottom: 20 }}>
                 <LocationOnIcon />
                 <Typography
-                  style={{ paddingLeft: 10, verticalAlign: 5 }}
+                  style={{ paddingLeft: 10, verticalAlign: 6 }}
                   display="inline"
                   component="p"
                 >
@@ -147,30 +153,30 @@ function ItemDescription() {
                 <div style={{ paddingLeft: 32 }}>
                   <a
                     href="https://www.google.com/maps/dir//J.+Jasinskio+g.+15,+Vilnius+01111,+Lithuania/@54.6887771,25.2591619,17z/data=!4m17!1m7!3m6!1s0x46dd9409ebcb5afb:0x3da63ea8001c614c!2sJ.+Jasinskio+g.+15,+Vilnius+01111,+Lithuania!3b1!8m2!3d54.688774!4d25.2613559!4m8!1m0!1m5!1m1!1s0x46dd9409ebcb5afb:0x3da63ea8001c614c!2m2!1d25.2613559!2d54.688774!3e2"
-                    style={{ color: 'blue' }}
+                    style={{ color: '#0b409c' }}
                   >
                     Gauti nuorodas
                   </a>
                 </div>
               </Grid>
-              <Grid item xs={12} style={{ marginBottom: 15 }}>
+              <Grid item xs={12} style={{ marginBottom: 20 }}>
                 <PersonIcon />
                 <Typography
-                  style={{ paddingLeft: 10, verticalAlign: 5 }}
+                  style={{ paddingLeft: 10, verticalAlign: 6 }}
                   display="inline"
                   component="p"
                 >
                   Agne123
                 </Typography>
                 <div style={{ paddingLeft: 32 }}>
-                  <a href="/#" style={{ color: 'blue' }}>
+                  <a href="/#" style={{ color: '#0b409c' }}>
                     Rašyti laišką
                   </a>
                 </div>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item md={5}>
+          <Grid item md={6}>
             <Box display="inline" component="p">
               <img
                 alt="Google maps placeholder"
