@@ -14,7 +14,6 @@ import PersonIcon from '@material-ui/icons/Person';
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 26,
-    marginRight: theme.spacing(8),
     padding: 30,
     border: '1px solid #e4e4e4',
     borderRadius: 4
