@@ -14,10 +14,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles({
   card: {
-    border: '1px solid #e4e4e4',
-    '&:hover': {
-      boxShadow: '0 15px 35px rgba(50,50,93,.07), 0 5px 15px rgba(0,0,0,.03)'
-    }
+    border: '1px solid #e4e4e4'
   },
   media: {
     height: 0,

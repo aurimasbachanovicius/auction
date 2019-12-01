@@ -42,6 +42,7 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         color: 'inherit',
+        padding: '8px 16px',
         textTransform: 'capitalize',
         '&:hover': {
           backgroundColor: 'inherit',
@@ -62,10 +63,15 @@ const theme = createMuiTheme({
         padding: '7px 0'
       }
     },
+    MuiInputLabel: {
+      outlined: {
+        transform: 'translate(14px, 13px) scale(1)'
+      }
+    },
     MuiOutlinedInput: {
       input: {
-        paddingTop: 8.5,
-        paddingBottom: 8.5
+        paddingTop: 11,
+        paddingBottom: 11
       }
     },
     MuiListItemIcon: {

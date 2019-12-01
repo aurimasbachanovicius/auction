@@ -42,12 +42,13 @@ class AuthenticateUser extends React.Component {
 
     return (
       <React.Fragment>
-        {error && <span style={{ color: 'red' }}>{error}</span>}
-        {loggedIn && <span style={{ color: 'green' }}>Logged In</span>}
-
         <LoginForm onSubmit={this.handleSubmit}>
           <EmailInput onChange={this.handleChange} value={email} />
           <PasswordInput name="password" onChange={this.handleChange} value={password} />
+          <div>
+            {error && <span style={{ color: 'red' }}>{error}</span>}
+            {loggedIn && <span style={{ color: 'green' }}>Logged In</span>}
+          </div>
           <RememberMeCheckbox />
           <LoginButton loggingIn={loggingIn} />
         </LoginForm>
