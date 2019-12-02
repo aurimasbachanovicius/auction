@@ -2,10 +2,9 @@ import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { Grid } from '@material-ui/core';
 import AuthenticateUser from 'containers/AuthenticateUser';
-import Socials from 'components/Account/Socials';
 import RegisterUser from 'containers/RegisterUser';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   loginRegisterFields: {
     marginTop: 26,
     padding: 40,
@@ -46,16 +45,16 @@ function AuthPage() {
         </Grid>
       </Grid> */}
       <Grid container spacing={0} justify="center">
-        <Grid item md={1}></Grid>
+        <Grid item md={1} />
         <Grid item md={4} className={classes.loginRegisterFields}>
           <AuthenticateUser />
         </Grid>
-        <Grid item md={1} className={classes.verticalBorder}></Grid>
-        <Grid item md={1}></Grid>
+        <Grid item md={1} className={classes.verticalBorder} />
+        <Grid item md={1} />
         <Grid item md={4} className={classes.loginRegisterFields}>
           <RegisterUser />
         </Grid>
-        <Grid item md={1}></Grid>
+        <Grid item md={1} />
       </Grid>
     </React.Fragment>
   );
