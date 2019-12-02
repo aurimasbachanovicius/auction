@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 const EmailInput = ({ error, value, onChange }) => (
   <TextField
     variant="outlined"
-    margin="normal"
+    margin="dense"
     required
     fullWidth
     id="email"
     value={value}
-    label="Email Address"
+    placeholder="El. pašto adresas"
     name="email"
     autoComplete="email"
     autoFocus

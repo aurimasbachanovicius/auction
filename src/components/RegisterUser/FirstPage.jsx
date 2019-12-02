@@ -62,7 +62,14 @@ class FirstPage extends React.Component {
           value={repeatPassword}
           name="repeatPassword"
         />
-        <Button type="button" onClick={this.handleSubmit} variant="contained" color="primary">
+        <Button
+          type="button"
+          fullWidth
+          onClick={this.handleSubmit}
+          variant="contained"
+          color="primary"
+          style={{ marginTop: '15px' }}
+        >
           Tęsti
         </Button>
       </React.Fragment>

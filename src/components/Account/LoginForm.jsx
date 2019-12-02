@@ -10,7 +10,7 @@ const LoginForm = ({ onSubmit, children }) => (
     <Grid container style={{ marginTop: 15 }}>
       <Grid item xs>
         <Link to="/signup/remember-password" variant="body2">
-          Užmiršote slaptažodį?
+          Pamiršote slaptažodį?
         </Link>
       </Grid>
     </Grid>

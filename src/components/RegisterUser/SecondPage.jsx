@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import SimpleTextField from 'components/Account/SimpleTextField';
 
@@ -57,17 +58,28 @@ class SecondPage extends React.Component {
           name="surname"
           value={surname}
         />
-        <Button type="button" onClick={previousPage} variant="contained" color="primary">
-          Atgal
-        </Button>
-        <Button
-          style={{ marginLeft: 15 }}
-          onClick={this.handleSubmit}
-          variant="contained"
-          color="secondary"
-        >
-          Registruotis
-        </Button>
+        <Grid container spacing={2} justify="center" style={{ marginTop: '15px' }}>
+          <Grid item md={6}>
+            <Button
+              type="button"
+              onClick={previousPage}
+              variant="contained"
+              style={{ width: '100%' }}
+            >
+              Atgal
+            </Button>
+          </Grid>
+          <Grid item md={6}>
+            <Button
+              onClick={this.handleSubmit}
+              variant="contained"
+              color="primary"
+              style={{ width: '100%' }}
+            >
+              Registruotis
+            </Button>
+          </Grid>
+        </Grid>
       </div>
     );
   }

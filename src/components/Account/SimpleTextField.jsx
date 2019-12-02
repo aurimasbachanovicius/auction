@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 const SimpleTextField = ({ error, name, value, label, onChange }) => (
   <TextField
     variant="outlined"
-    margin="normal"
+    margin="dense"
     required
     fullWidth
     id="email"
     value={value}
-    label={label}
+    placeholder={label}
     name={name}
     autoComplete={name}
     autoFocus

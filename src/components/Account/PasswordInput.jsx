@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 const PasswordInput = ({ error, value, name, onChange }) => (
   <TextField
     variant="outlined"
-    margin="normal"
+    margin="dense"
     required
     fullWidth
     value={value}
     name={name}
-    label="Password"
+    placeholder="Slaptažodis"
     type="password"
     id="password"
     autoComplete="current-password"
