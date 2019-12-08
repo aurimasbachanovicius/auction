@@ -43,11 +43,14 @@ const theme = createMuiTheme({
       root: {
         color: 'inherit',
         padding: '8px 16px',
-        textTransform: 'capitalize',
+        textTransform: 'initial',
         '&:hover': {
           backgroundColor: 'inherit',
           border: 'default'
         }
+      },
+      outlined: {
+        padding: '8px 16px'
       },
       label: {
         whiteSpace: 'nowrap'

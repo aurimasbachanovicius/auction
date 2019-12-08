@@ -8,6 +8,7 @@ import EmailInput from 'components/Account/EmailInput';
 import PasswordInput from 'components/Account/PasswordInput';
 import RememberMeCheckbox from 'components/Account/RememberMeCheckbox';
 import LoginButton from 'components/Account/LoginButton';
+import { Box } from '@material-ui/core';
 
 class AuthenticateUser extends React.Component {
   constructor(props) {
@@ -45,10 +46,10 @@ class AuthenticateUser extends React.Component {
         <LoginForm onSubmit={this.handleSubmit}>
           <EmailInput onChange={this.handleChange} value={email} />
           <PasswordInput name="password" onChange={this.handleChange} value={password} />
-          <div>
+          <Box display="none">
             {error && <span style={{ color: 'red' }}>{error}</span>}
             {loggedIn && <span style={{ color: 'green' }}>Logged In</span>}
-          </div>
+          </Box>
           <RememberMeCheckbox />
           <LoginButton loggingIn={loggingIn} />
         </LoginForm>

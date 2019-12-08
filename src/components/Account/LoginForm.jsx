@@ -7,7 +7,7 @@ const LoginForm = ({ onSubmit, children }) => (
   <form noValidate onSubmit={onSubmit}>
     {children}
 
-    <Grid container style={{ marginTop: 15 }}>
+    <Grid container style={{ marginTop: 15, textAlign: 'center' }}>
       <Grid item xs>
         <Link to="/signup/remember-password" variant="body2">
           Pamiršote slaptažodį?
