@@ -52,13 +52,13 @@ class AuthPage extends React.Component {
               <Grid item md={12}>
                 <Button variant="contained" color="primary" fullWidth>
                   <FacebookIcon style={{ marginRight: 10 }} />
-                  Prisijungti su Facebook
+                  Prisijungti per Facebook
                 </Button>
               </Grid>
               <Grid item md={12}>
                 <Button variant="outlined" color="default" fullWidth>
                   <ThumbUp style={{ marginRight: 10 }} />
-                  Prisijungti su Google
+                  Prisijungti per Google
                 </Button>
               </Grid>
             </Grid>
@@ -83,13 +83,13 @@ class AuthPage extends React.Component {
                   <Grid item md={12}>
                     <Button variant="contained" color="primary" fullWidth>
                       <FacebookIcon style={{ marginRight: 10 }} />
-                      Tęsti naudojant Facebook
+                      Tęsti per Facebook
                     </Button>
                   </Grid>
                   <Grid item md={12}>
                     <Button variant="outlined" color="default" fullWidth>
                       <ThumbUp style={{ marginRight: 10 }} />
-                      Tęsti naudojant Google
+                      Tęsti per Google
                     </Button>
                   </Grid>
                 </Grid>
@@ -108,7 +108,7 @@ class AuthPage extends React.Component {
                   fullWidth
                 >
                   <MailOutlineIcon style={{ marginRight: 10 }} />
-                  Registruotis su el. pašto adresu
+                  Naudoti el. paštą
                 </Button>
               </React.Fragment>
             )}
