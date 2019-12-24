@@ -108,7 +108,7 @@ class AuthPage extends React.Component {
                   fullWidth
                 >
                   <MailOutlineIcon style={{ marginRight: 10 }} />
-                  Naudoti el. paštą
+                  Registruotis su el. paštu
                 </Button>
               </React.Fragment>
             )}

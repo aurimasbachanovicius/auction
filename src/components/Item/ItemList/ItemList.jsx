@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     '@media (min-width: 1300px)': {
       maxWidth: '25%'
     },
-    '@media (min-width: 1550px)': {
+    '@media (min-width: 1520px)': {
       maxWidth: '20%'
     }
   }
@@ -51,8 +51,8 @@ const ItemList = () => {
 
   return (
     <React.Fragment>
-      <Box mt={3}>
-        <Grid container direction="row" spacing={2} className={classes.container}>
+      <Box mt={2}>
+        <Grid container direction="row" spacing={1} className={classes.container}>
           {items}
         </Grid>
       </Box>

@@ -6,9 +6,6 @@ import Categories from 'components/Item/AdvancedFilters/Categories';
 import PriceRange from 'components/Item/AdvancedFilters/PriceRange';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    paddingRight: theme.spacing(1)
-  },
   formControl: {
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(2),
@@ -24,7 +21,7 @@ const AdvancedFilters = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Box>
       <FormControl className={classes.formControl}>
         <Categories />
       </FormControl>

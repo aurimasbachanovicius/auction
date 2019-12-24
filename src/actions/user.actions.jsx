@@ -1,4 +1,5 @@
 import userValidator from 'services/userValidator';
+import auth from 'utils/auth.js';
 
 export const loginActions = {
   REQUEST: 'USER_LOGIN_REQUEST',
@@ -48,6 +49,7 @@ const register = (email, password) => {
       return;
     }
 
+    auth(email, password);
     dispatch(success(email));
   };
 };

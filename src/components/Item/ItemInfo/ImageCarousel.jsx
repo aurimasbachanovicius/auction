@@ -33,9 +33,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 750,
     flexGrow: 1,
-    marginTop: 26,
     position: 'relative',
-    marginRight: theme.spacing(5)
+    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(2)
   },
   arrowButton: {
     padding: '50px 0',

@@ -39,6 +39,11 @@ const theme = createMuiTheme({
         }
       }
     },
+    MuiPaper: {
+      root: {
+        color: 'inherit'
+      }
+    },
     MuiButton: {
       root: {
         color: 'inherit',
@@ -54,14 +59,23 @@ const theme = createMuiTheme({
       },
       label: {
         whiteSpace: 'nowrap'
+      },
+      text: {
+        padding: '8px'
       }
     },
     MuiIconButton: {
       root: {
-        color: 'inherit'
+        color: 'inherit',
+        '&:hover': {
+          backgroundColor: 'transparent'
+        }
       }
     },
     MuiInputBase: {
+      root: {
+        color: 'inherit'
+      },
       input: {
         padding: '7px 0'
       }
@@ -84,8 +98,20 @@ const theme = createMuiTheme({
     },
     MuiListItem: {
       root: {
-        paddingTop: '0px'
+        paddingTop: '0px',
+        '&$selected': {
+          backgroundColor: 'transparent',
+          '&:hover': {
+            backgroundColor: 'transparent'
+          }
+        },
+        '&:hover': {
+          backgroundColor: 'transparent',
+          textDecoration: 'underline',
+          cursor: 'pointer'
+        }
       },
+
       button: {
         '&:hover': {
           backgroundColor: 'white',
@@ -103,10 +129,21 @@ const theme = createMuiTheme({
         marginBottom: '0px'
       }
     },
+    MuiSelect: {
+      select: {
+        '&:focus': {
+          backgroundColor: 'transparent',
+          cursor: 'pointer'
+        }
+      }
+    },
     PrivateSwitchBase: {
       root: {
-        paddingTop: '4px',
-        paddingBottom: '4px'
+        paddingTop: '3px',
+        paddingBottom: '3px',
+        '&:hover': {
+          backgroundColor: 'transparent'
+        }
       }
     },
     PrivateValueLabel: {

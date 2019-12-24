@@ -11,28 +11,26 @@ import MenuItem from '@material-ui/core/MenuItem';
 const categories = [
   {
     value: 'All',
-    label: 'Kategorijos'
+    label: 'Visos Kategorijos'
   },
   {
     value: 'Computers',
-    label: 'Computers'
+    label: 'Kompiuteriai'
   },
   {
     value: 'Phones',
-    label: 'Phones'
+    label: 'Mobilieji Telefonai'
   },
   {
     value: 'Books',
-    label: 'Books'
+    label: 'Knygos'
   }
 ];
 
 const useStyles = makeStyles(theme => ({
   root: {
-    transition: 'box-shadow 200ms ease-in',
-    backgroundColor: '#f9f9f9',
     border: '1px solid #ebebeb',
-    borderRadius: 19,
+    borderRadius: 4,
     height: 40,
     padding: '2px 4px',
     width: '100%',
@@ -51,8 +49,11 @@ const useStyles = makeStyles(theme => ({
       display: 'flex'
     }
   },
-  menu: {
-    width: 200
+  menuItem: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2)
   },
   input: {
     marginLeft: 8,
@@ -83,6 +84,7 @@ function SearchBar() {
       <Grid container alignItems="stretch">
         <TextField
           select
+          selected={true}
           label=""
           className={classes.textField}
           value={values.category}
@@ -97,7 +99,12 @@ function SearchBar() {
           }}
         >
           {categories.map(option => (
-            <MenuItem key={option.value} value={option.value} button="">
+            <MenuItem
+              key={option.value}
+              value={option.value}
+              button=""
+              className={classes.menuItem}
+            >
               {option.label}
             </MenuItem>
           ))}
