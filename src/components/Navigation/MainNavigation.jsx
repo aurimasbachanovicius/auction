@@ -23,8 +23,7 @@ const useStyles = makeStyles(theme => ({
   search: {
     position: 'relative',
     marginRight: theme.spacing(1),
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {

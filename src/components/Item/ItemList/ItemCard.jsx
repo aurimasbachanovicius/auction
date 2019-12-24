@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     }
   },
   image: {
-    maxWidth: '40%',
+    maxWidth: '36%',
     '@media (min-width: 420px)': {
       maxWidth: '100%'
     }
