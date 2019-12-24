@@ -86,9 +86,25 @@ const theme = createMuiTheme({
       }
     },
     MuiOutlinedInput: {
+      root: {
+        '&:hover:not($disabled):not($focused):not($error) $notchedOutline': {
+          borderColor: '#0B409C'
+        },
+        '&$focused $notchedOutline': {
+          borderColor: '#0B409C',
+          borderWidth: 1
+        }
+      },
       input: {
         paddingTop: 11,
         paddingBottom: 11
+      }
+    },
+    MuiFormLabel: {
+      root: {
+        '&$focused': {
+          color: '#0B409C'
+        }
       }
     },
     MuiListItemIcon: {
@@ -137,10 +153,16 @@ const theme = createMuiTheme({
         }
       }
     },
+    MuiSlider: {
+      thumb: {
+        '&:hover': {
+          boxShadow: 'none'
+        }
+      }
+    },
     PrivateSwitchBase: {
       root: {
-        paddingTop: '3px',
-        paddingBottom: '3px',
+        padding: '0 4px 3px 9px',
         '&:hover': {
           backgroundColor: 'transparent'
         }
@@ -151,7 +173,7 @@ const theme = createMuiTheme({
         color: '#484848'
       },
       circle: {
-        height: 42,
+        height: 48,
         backgroundColor: 'transparent'
       },
       offset: {

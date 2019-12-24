@@ -3,9 +3,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-
 import { Link } from 'react-router-dom';
-import 'components/Navigation/MainNavigation.css';
 import Logo from 'assets/logo/logo_transparent.png';
 import Search from 'components/Navigation/SearchBar';
 import ToolbarMenu from 'containers/UserMenu';
@@ -17,6 +15,10 @@ const useStyles = makeStyles(theme => ({
   },
   margin: {
     margin: theme.spacing(1)
+  },
+  logo: {
+    height: 40,
+    display: 'flex'
   },
   search: {
     position: 'relative',
@@ -79,7 +81,7 @@ function MainNavigation() {
 
   const logo = (
     <Link to="/">
-      <img src={Logo} alt="logo" />
+      <img src={Logo} alt="logo" className={classes.logo} />
     </Link>
   );
 
