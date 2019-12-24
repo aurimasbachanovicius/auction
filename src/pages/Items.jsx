@@ -11,6 +11,8 @@ const useStyles = makeStyles(theme => ({
     position: 'fixed',
     height: '100%',
     display: 'none',
+    // If 770px window size value is changed, then also change it for Main Navigation in MainNavigation.jsx
+    // Advanced Filters are binded to Main Navigation (disappears on scroll without leaving a weird gap)
     '@media (min-width: 770px)': {
       display: 'flex',
       maxWidth: '30%'

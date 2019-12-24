@@ -194,7 +194,7 @@ const theme = createMuiTheme({
   shadows: Array(25).fill('none')
 });
 
-const App = () => {
+export default function App() {
   return (
     <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
       <ThemeProvider theme={theme}>
@@ -205,6 +205,4 @@ const App = () => {
       </ThemeProvider>
     </BrowserRouter>
   );
-};
-
-export default App;
+}

@@ -33,7 +33,9 @@ const useStyles = makeStyles({
     paddingTop: '100%' // 1:1
   },
   itemTitle: {
-    marginTop: '.625rem',
+    '@media (min-width: 420px)': {
+      marginTop: '.625rem'
+    },
     fontWeight: 400,
     textAlign: 'left',
     paddingRight: 0

@@ -34,7 +34,9 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 750,
     flexGrow: 1,
     position: 'relative',
-    marginRight: theme.spacing(1),
+    '@media (min-width: 770px)': {
+      marginRight: theme.spacing(1)
+    },
     marginTop: theme.spacing(2)
   },
   arrowButton: {
@@ -89,7 +91,10 @@ const useStyles = makeStyles(theme => ({
   },
   thumbnailImg: {
     borderRadius: 4,
-    height: 69
+    height: 60,
+    '@media (min-width: 770px)': {
+      height: 69
+    }
   }
 }));
 

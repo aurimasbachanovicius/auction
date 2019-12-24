@@ -1,13 +1,15 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Link } from 'react-router-dom';
 import Logo from 'assets/logo/logo_transparent.png';
 import Search from 'components/Navigation/SearchBar';
 import ToolbarMenu from 'containers/UserMenu';
 import SellNowButton from 'components/Navigation/SellNowButton';
+import AppBar from '@material-ui/core/AppBar';
+import Slide from '@material-ui/core/Slide';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -75,7 +77,24 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function MainNavigation() {
+function HideOnScroll(props) {
+  const { children, scrollWindow } = props;
+  const trigger = useScrollTrigger({ target: scrollWindow ? window() : undefined });
+
+  // If 770px window size value is changed, then also change it for Advanced filters in AdvancedFilters.jsx
+  // Advanced Filters are binded to Main Navigation (disappears on scroll without leaving a weird gap)
+  return window.innerWidth <= 770 ? (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  ) : (
+    <Slide appear={false} direction="down" in={true}>
+      {children}
+    </Slide>
+  );
+}
+
+export default function MainNavigation(props) {
   const classes = useStyles();
 
   const logo = (
@@ -98,25 +117,29 @@ function MainNavigation() {
   );
 
   return (
-    <AppBar position="fixed" color="inherit">
-      <Toolbar className={classes.sectionOneRow}>
-        {logo}
-        {search}
-        {buttons}
-      </Toolbar>
-      <Toolbar className={classes.sectionTwoRows}>
-        <Grid container direction="row" justify="space-between" alignItems="center">
-          <Grid item md={4}>
+    <React.Fragment>
+      <HideOnScroll {...props}>
+        <AppBar position="fixed" color="inherit">
+          <Toolbar className={classes.sectionOneRow}>
             {logo}
-          </Grid>
-          <Grid item md={8}>
+            {search}
             {buttons}
-          </Grid>
-          {search}
-        </Grid>
-      </Toolbar>
-    </AppBar>
+          </Toolbar>
+          <Toolbar className={classes.sectionTwoRows}>
+            <Grid container direction="row" justify="space-between" alignItems="center">
+              <Grid item md={4}>
+                {logo}
+              </Grid>
+              <Grid item md={8}>
+                {buttons}
+              </Grid>
+              {search}
+            </Grid>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
+    </React.Fragment>
   );
 }
 
-export default MainNavigation;
+// export default MainNavigation;
