@@ -26,10 +26,15 @@ const useStyles = makeStyles(theme => ({
   },
   priceInputField: {
     maxWidth: 120,
-    backgroundColor: '#fff'
+    marginTop: theme.spacing(2),
+    backgroundColor: '#fff',
+    '@media (min-width: 770px)': {
+      marginLeft: 10
+    }
   },
   button: {
-    marginLeft: theme.spacing(1)
+    marginLeft: theme.spacing(1),
+    marginTop: theme.spacing(2)
   },
   biddingField: {
     borderRadius: 4,
@@ -37,8 +42,10 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(4),
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
-    backgroundColor: '#f9f9f9',
-    border: '1px solid #ebebeb'
+    '@media (min-width: 770px)': {
+      backgroundColor: '#f9f9f9',
+      border: '1px solid #ebebeb'
+    }
   }
 }));
 
@@ -82,7 +89,7 @@ function ItemDescription() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container>
           <Grid item md={4}></Grid>
           <Grid item md={8}>
             <FormControl variant="outlined">

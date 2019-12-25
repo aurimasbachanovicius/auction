@@ -8,7 +8,9 @@ import PersonIcon from '@material-ui/icons/Person';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    marginLeft: theme.spacing(2),
+    '@media (min-width: 770px)': {
+      marginLeft: theme.spacing(2)
+    },
     marginTop: theme.spacing(2),
     padding: 30,
     border: '1px solid #e4e4e4',
